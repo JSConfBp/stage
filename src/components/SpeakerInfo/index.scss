@@ -1,0 +1,21 @@
+
+.speakerInfo {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	color: white;
+	opacity: .7;
+
+	& .name,
+	& .topic {
+		display: block;
+	}
+
+	& .name {
+		font-size: calc( 3 * calc(calc(100vw * 0.32926829) / 100) );
+	}
+	& .topic {
+		font-size: calc( 3.3 * calc(calc(100vw * 0.32926829) / 100) );
+	}
+}
