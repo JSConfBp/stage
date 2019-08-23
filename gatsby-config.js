@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://0.0.0.0:8800',
+    siteUrl: 'http://2015.jsconfbp.com/visual-2019/',
     title: 'Visual 2019',
     description: '',
     keywords: '',
