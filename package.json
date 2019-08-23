@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "start": "npm run dev",
-    "dev": "npx gatsby develop",
+    "dev": "npx gatsby develop -p 8800",
     "postdev": "npm run format",
     "build": "npx gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8800",
     "format": "npx prettier --write \"src/**/*.js\""
   },
   "dependencies": {

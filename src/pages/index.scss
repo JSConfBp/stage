@@ -1,3 +1,16 @@
+// 3280 x 1080
+:root {
+	--screen-ratio: 0.32926829;
+	--color-red: darken(#DB3127, 30);
+	--color-blue: #3580C2;
+	--color-yellow: #f2de48;
+	--color-green: #43a447;
+	--color-white: #dedede;
+	--color-black: #0f0f0f;
+
+	--color-transition: 3s;
+}
+
 html, body {
 	background: #0c0c0c;
 	margin: 0;
@@ -16,8 +29,30 @@ svg {
 .visual {
 	position: relative;
 	width: 100%;
-	height: calc(100vw * 0.32926829);
-	background: hsla(7, 69%, 25%, 1);
+	height: calc(100vw * var(--screen-ratio));
+	background: hsla(115, 44%, 31%, 1);
+	transition: background-color var(--color-transition);
+}
+
+.visual {
+	&.red {
+		background-color: var(--color-red);
+	}
+	&.green {
+		background-color: var(--color-green);
+	}
+	&.blue {
+		background-color: var(--color-blue);
+	}
+	&.yellow {
+		background-color: var(--color-yellow);
+	}
+	&.white {
+		background-color: var(--color-white);
+	}
+	&.black {
+		background-color: var(--color-black);
+	}
 }
 
 .fill {
@@ -39,21 +74,20 @@ svg {
 	opacity: 1;
 }
 
-
-
 .presentation {
 	z-index: 10;
 	position: absolute;
-	height: calc(100vw * 0.32926829);
-	width: calc(calc(100vw * 0.32926829) / 0.5625);
-	background: gray;
+	height: calc(100vw * var(--screen-ratio));
+	width: calc(calc(100vw * var(--screen-ratio)) / 0.5625);
+	background: white;
 	top: 0;
 	right: 0;
-	display: none;
+	opacity: 0;
 
-	&.show {
-		display: block;
-	}
+}
+
+.presentation-active .presentation {
+	opacity: .2;
 }
 
 .silhouette {
@@ -64,5 +98,19 @@ svg {
 	height: 64%;
 	width: 10%;
 	left: 17vw;
-	bottom: -4%;
+	bottom: -27%;
+	background-size: auto 108%;
+    background-position: 0 36%;
 }
+
+
+.stage-bottom {
+	position: absolute;
+	z-index: 9;
+	top: 100%;
+	background: hsl(0, 0%, 22%);
+	height: 26.6666%;
+	width: 100%;
+}
+
+// 432px

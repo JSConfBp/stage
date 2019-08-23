@@ -4,7 +4,17 @@ import io from 'socket.io-client'
 
 import SpeakerInfo from '../components/SpeakerInfo'
 
-import styles from './index.scss'
+import './index.scss'
+
+const emptyStage = {
+  speaker: {
+    name: '',
+    topic: '',
+  },
+}
+
+//const SOCKET_URL = 'http://0.0.0.0:8000'
+const SOCKET_URL = 'https://stage-control.herokuapp.com/'
 
 const IndexPage = props => {
   const clusterLength = 4
@@ -34,12 +44,14 @@ const IndexPage = props => {
       setTimeout(resolve, timeout)
     })
   }
+
   const hidePolygon = async (polygon, timeout) => {
     return new Promise(resolve => {
       polygon.className.baseVal = polygon.className.baseVal.replace(' show', '')
       setTimeout(resolve, timeout)
     })
   }
+
   const show = async () => {
     const prevCluster =
       currentCluster !== 0
@@ -69,19 +81,30 @@ const IndexPage = props => {
     drawTimer = setTimeout(show, nextClusterTimeout)
   }
 
-  const [stage] = useState({})
+  const [stage, setStage] = useState(Object.assign({}, emptyStage))
 
   useEffect(() => {
+    console.log('useEffect init')
 
-	const stageIO = io('https://stage-control.herokuapp.com/');
+    const socket = io(SOCKET_URL, {})
+
+    socket.on('update', data => {
+      console.log('stage update', data)
+      setStage(data)
+    })
 
     clusters = readClusters()
     show()
 
     return () => {
+      console.log('useEffect cleanup')
+
+      socket.close()
+
       clusters = []
       currentCluster = 0
       clearTimeout(drawTimer)
+
       Array.from(document.querySelectorAll('polygon.fill')).forEach(polygon => {
         polygon.className.baseVal = polygon.className.baseVal.replace(
           'show',
@@ -89,10 +112,17 @@ const IndexPage = props => {
         )
       })
     }
-  })
+  }, [props])
 
   return (
-    <div className="visual" id="Visual">
+    <div
+      className={classnames(
+        'visual',
+        stage.presentation && 'presentation-active',
+        stage.color || 'black'
+      )}
+      id="Visual"
+    >
       <svg
         data-name="Layer 3"
         xmlns="http://www.w3.org/2000/svg"
@@ -194,10 +224,11 @@ const IndexPage = props => {
         </g>
       </svg>
 
-      <SpeakerInfo />
+      <SpeakerInfo stage={stage} />
 
-      <div className="silhouette"></div>
       <div className={classnames('presentation')}></div>
+      <div className="silhouette"></div>
+      <div className="stage-bottom"></div>
     </div>
   )
 }

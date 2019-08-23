@@ -14,7 +14,7 @@ export default class HTML extends React.Component {
           />
           <link href="https://fonts.googleapis.com/" rel="preconnect" />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i|Space+Mono:400,700"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Rubik:300,400,700&display=swap"
             rel="preload"
             as="style"
           />
@@ -22,7 +22,7 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
 
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i|Space+Mono:400,700"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Rubik:300,400,700&display=swap"
             rel="stylesheet"
           />
         </head>

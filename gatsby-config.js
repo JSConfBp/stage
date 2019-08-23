@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://0.0.0.0:8000',
+    siteUrl: 'http://0.0.0.0:8800',
     title: 'Visual 2019',
     description: '',
     keywords: '',
     twitter: '@jsconfbp'
   },
   plugins: [
+    'gatsby-plugin-sass',
     {
       resolve:`gatsby-source-filesystem`,
       options:{
@@ -19,7 +20,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
