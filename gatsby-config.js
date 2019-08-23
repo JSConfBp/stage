@@ -6,6 +6,7 @@ module.exports = {
     keywords: '',
     twitter: '@jsconfbp'
   },
+  pathPrefix: `/visual-2019/`,
   plugins: [
     'gatsby-plugin-sass',
     {
