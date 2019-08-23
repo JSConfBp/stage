@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import './index.scss'
 
-const JSVisual = (props) => {
+const JSVisual = ({ presentation }) => {
 
 	const drawTimer = useRef(0);
 	const clusters = useRef([]);
@@ -97,7 +97,7 @@ const JSVisual = (props) => {
 			)
 		  })
 		}
-	  }, [props])
+	  }, [presentation])
 
 	return (<svg
         data-name="Layer 3"

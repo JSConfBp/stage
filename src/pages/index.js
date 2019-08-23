@@ -14,7 +14,6 @@ const emptyStage = {
   },
 }
 
-//const SOCKET_URL = 'http://0.0.0.0:8000'
 const SOCKET_URL = 'https://stage-control.herokuapp.com/'
 
 const IndexPage = props => {
@@ -45,8 +44,8 @@ const IndexPage = props => {
       )}
       id="Visual"
     >
+      { stage && stage.event === 'js' && (<JSVisual presentation={stage.presentation} />)}
 
-      <JSVisual />
       <SpeakerInfo stage={stage} />
 
       <div className={classnames('presentation')}></div>
