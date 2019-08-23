@@ -6,8 +6,7 @@ module.exports = {
     keywords: '',
     twitter: '@jsconfbp'
   },
-  assetPrefix: 'http://2015.jsconfbp.com/visual-2019/',
-  pathPrefix: `/visual-2019/`,
+  pathPrefix: `/visual-2019`,
   plugins: [
     'gatsby-plugin-sass',
     {
