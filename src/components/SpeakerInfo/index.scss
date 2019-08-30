@@ -16,8 +16,6 @@
 
 .speaker-info {
 	position: absolute;
-
-
 	padding-left: 2rem;
 	border-left: .2rem solid #ffffff44;
 
@@ -49,11 +47,9 @@
 	left: 34%;
 	width: 32%;
 
-
 	& .name {
 		padding-bottom: calc( 2.5 * var(--speaker-text));
 		font-size: calc( 6 * var(--speaker-text));
-
 	}
 
 	& .topic {
