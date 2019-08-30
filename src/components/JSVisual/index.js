@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import './index.scss'
 
-const JSVisual = ({ presentation, midSlide}) => {
+const JSVisual = ({ presentation, midSlide }) => {
   const drawTimer = useRef(0)
   const clusters = useRef([])
   let currentCluster = 0
@@ -45,12 +45,18 @@ const JSVisual = ({ presentation, midSlide}) => {
   }
 
   const show = async () => {
+
+    if (!clusters.current) return;
+
     const prevCluster =
       currentCluster !== 0
         ? clusters.current[currentCluster - 1]
         : clusters.current[clusters.current.length - 1]
 
     const nextCluster = clusters.current[currentCluster]
+
+    if (!prevCluster || !nextCluster) return;
+    
     const prevLength = prevCluster.length
     const nextLength = nextCluster.length
 
@@ -71,6 +77,7 @@ const JSVisual = ({ presentation, midSlide}) => {
     if (!clusters.current[currentCluster]) {
       currentCluster = 0
     }
+
     drawTimer.current = setTimeout(show, nextClusterTimeout)
   }
 
@@ -83,10 +90,9 @@ const JSVisual = ({ presentation, midSlide}) => {
 
     return () => {
       console.log('useEffect cleanup')
-
+      clearTimeout(drawTimer.current)
       clusters.current = []
       currentCluster = 0
-      clearTimeout(drawTimer.current)
 
       Array.from(document.querySelectorAll('path.fill')).forEach(triangle => {
         triangle.className.baseVal = triangle.className.baseVal.replace(
