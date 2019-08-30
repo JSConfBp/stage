@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import './index.scss'
 
-const JSVisual = ({ presentation }) => {
+const JSVisual = ({ presentation, midSlide}) => {
   const drawTimer = useRef(0)
   const clusters = useRef([])
   let currentCluster = 0
@@ -39,7 +39,7 @@ const JSVisual = ({ presentation }) => {
     if (!polygon) return Promise.resolve()
 
     return new Promise(resolve => {
-      polygon.className.baseVal = polygon.className.baseVal.replace(' show', '')
+      polygon.className.baseVal = polygon.className.baseVal.replace(/show/g, '')
       setTimeout(resolve, timeout)
     })
   }
@@ -76,8 +76,8 @@ const JSVisual = ({ presentation }) => {
 
   useEffect(() => {
     console.log('useEffect init')
+
     clusters.current = readClusters()
-    console.log({ clusters })
 
     show()
 
@@ -95,7 +95,7 @@ const JSVisual = ({ presentation }) => {
         )
       })
     }
-  }, [presentation])
+  }, [ false ])
 
   return (
     <svg width="3280" height="1080" viewBox="0 0 3280 1080">

@@ -40,6 +40,7 @@ const IndexPage = props => {
       className={classnames(
         'visual',
         stage.presentation && 'presentation-active',
+        stage.midSlide && 'midsession-slides-active',
         stage.color || 'black'
       )}
       id="Visual"
@@ -48,7 +49,7 @@ const IndexPage = props => {
         <JSVisual presentation={stage.presentation} />
       )}
 
-      <SpeakerInfo stage={stage} />
+      <SpeakerInfo stage={stage} show={!stage.midSlide} />
 
       <div className={classnames('presentation')}></div>
       <div className="silhouette"></div>

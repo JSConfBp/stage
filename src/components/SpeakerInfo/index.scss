@@ -13,7 +13,6 @@
 	}
 }
 
-
 .speaker-info {
 	position: absolute;
 	padding-left: 2rem;
@@ -43,7 +42,7 @@
 }
 
 .speaker-info {
-	top: 26%;
+	top: -50%;
 	left: 34%;
 	width: 32%;
 
@@ -56,6 +55,11 @@
 		font-size: calc( 4.6 * var(--speaker-text));
 		line-height: calc( 5.8 * var(--speaker-text));
 		opacity: .7;
+	}
+
+
+	&.show-speaker-info {
+		top: 26%;
 	}
 }
 
