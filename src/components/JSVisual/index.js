@@ -6,7 +6,7 @@ const JSVisual = ({ presentation }) => {
   const drawTimer = useRef(0)
   const clusters = useRef([])
   let currentCluster = 0
-  let nextClusterTimeout = 3000
+  let nextClusterTimeout = 6000
 
   const readClusters = () => {
     return Array.from(
@@ -50,7 +50,6 @@ const JSVisual = ({ presentation }) => {
         ? clusters.current[currentCluster - 1]
         : clusters.current[clusters.current.length - 1]
 
-        
     const nextCluster = clusters.current[currentCluster]
     const prevLength = prevCluster.length
     const nextLength = nextCluster.length
@@ -62,8 +61,8 @@ const JSVisual = ({ presentation }) => {
       const nextPolygon = nextCluster[i]
 
       await Promise.all([
-        hidePolygon(prevPolygon, 200),
-        showPolygon(nextPolygon, 200),
+        hidePolygon(prevPolygon, 1400),
+        showPolygon(nextPolygon, 1400),
       ])
     }
 
@@ -123,6 +122,7 @@ const JSVisual = ({ presentation }) => {
         <path d="M1276.21,311.8v-88.94l44.47,44.47L1276.21,311.8z M1277.21,225.27v84.12l42.06-42.06L1277.21,225.27z" />
         <path d="M1276.21,311.8v88.94l-44.47-44.47L1276.21,311.8z M1275.21,398.33v-84.12l-42.06,42.06L1275.21,398.33z" />
       </g>
+{/*
       <g className="cluster-3">
         <path d="M118.93,212.72v-88.94l44.47,44.47L118.93,212.72z M119.93,126.19v84.12l42.06-42.06L119.93,126.19z" />
         <path d="M118.93,212.72h88.94l-44.47,44.47L118.93,212.72z M205.46,213.72h-84.12l42.06,42.06L205.46,213.72z" />
@@ -131,7 +131,8 @@ const JSVisual = ({ presentation }) => {
         <path d="M74.46,257.19h88.94l-44.47,44.47L74.46,257.19z M160.99,258.19H76.87l42.06,42.06L160.99,258.19z" />
         <path d="M118.93,390.6v-88.94l44.47,44.47L118.93,390.6z M119.93,304.07v84.12l42.06-42.06L119.93,304.07z" />
       </g>
-      <g className="cluster-4">
+*/}
+      <g className="cluster-3">
         <path d="M617.43,29.94l62.89,0l-62.89,62.89L617.43,29.94z M618.43,30.94l0,59.48l59.48-59.48L618.43,30.94z" />
         <path d="M554.54,92.83l62.89,0l-62.89,62.89L554.54,92.83z M555.54,93.83l0,59.48l59.48-59.48L555.54,93.83z" />
         <path d="M491.64,155.7l0-62.89l62.89,62.89L491.64,155.7z M492.64,154.7l59.48,0l-59.48-59.48L492.64,154.7z" />
@@ -139,7 +140,7 @@ const JSVisual = ({ presentation }) => {
         <path d="M430.71,91.83l0,62.89l-62.89-62.89L430.71,91.83z M429.71,92.83l-59.48,0l59.48,59.48L429.71,92.83z" />
         <path d="M323.08,136.3V47.36l44.47,44.47L323.08,136.3z M324.08,49.77v84.12l42.06-42.06L324.08,49.77z" />
       </g>
-      <g className="cluster-5">
+      <g className="cluster-4">
         <path d="M310.88,915.84V826.9l44.47,44.47L310.88,915.84z M311.88,829.31v84.12l42.06-42.06L311.88,829.31z" />
         <path d="M312.25,827.9H223.3l44.47-44.47L312.25,827.9z M225.72,826.9h84.12l-42.06-42.06L225.72,826.9z" />
         <path d="M223.25,738.96v88.94l-44.47-44.47L223.25,738.96z M222.25,825.49v-84.12l-42.06,42.06L222.25,825.49z" />

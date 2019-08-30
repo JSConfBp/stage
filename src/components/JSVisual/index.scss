@@ -8,30 +8,28 @@ svg {
 }
 
 .cluster-1 {
-    transform-box: fill-box;
-	transform-origin: center center;
-	transform: rotate(180deg) translate(215%, 172%);
+	transform: rotate(180deg) translate(-48%, -106%) scale(1.2);
 }
 .cluster-2 {
-	transform: translate(-0.9vw, -3vh);
+	transform: translate(-29.9vw, -17vh) scale(1.4);
 }
+// .cluster-3 {
+// 	display: none;
+// 	transform: translate(33.5%, 36%) scale(1.1);
+// }
 .cluster-3 {
-	transform: translate(33.5%, 36%);
+	transform: translate(17.3%, 77%) scale(1.2);
 }
 .cluster-4 {
-	transform: translate(18.3%, 77%);
+	transform: translate(-6.8%, -24%) scale(1.5);
 }
-.cluster-5 {
-	transform: translate(0.2%, 0%);
-}
-
 
 g[class^=cluster-] path {
 	fill: #fff;
 	stroke: #fff;
 	stroke-miterlimit: 10;
 	opacity: 0;
-	transition: opacity 2s;
+	transition: opacity 6s;
 }
 
 g[class^=cluster-] path.show {
