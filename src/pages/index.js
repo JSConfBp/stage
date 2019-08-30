@@ -44,7 +44,9 @@ const IndexPage = props => {
       )}
       id="Visual"
     >
-      { stage && stage.event === 'js' && (<JSVisual presentation={stage.presentation} />)}
+      {stage && stage.event === 'js' && (
+        <JSVisual presentation={stage.presentation} />
+      )}
 
       <SpeakerInfo stage={stage} />
 
