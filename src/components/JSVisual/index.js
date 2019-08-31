@@ -56,7 +56,6 @@ const JSVisual = ({ presentation, midSlide }) => {
     const nextCluster = clusters.current[currentCluster]
 
     if (!prevCluster || !nextCluster) return;
-    
     const prevLength = prevCluster.length
     const nextLength = nextCluster.length
 

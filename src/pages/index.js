@@ -4,6 +4,7 @@ import io from 'socket.io-client'
 
 import SpeakerInfo from '../components/SpeakerInfo'
 import JSVisual from '../components/JSVisual'
+import CSSVisual from '../components/CSSVisual'
 
 import './index.scss'
 
@@ -41,15 +42,20 @@ const IndexPage = props => {
         'visual',
         stage.presentation && 'presentation-active',
         stage.midSlide && 'midsession-slides-active',
-        stage.color || 'black'
+        stage.color || 'black',
+        `event-${stage.event}`
       )}
       id="Visual"
     >
+
+      <SpeakerInfo stage={stage} show={!stage.midSlide} />
+
       {stage && stage.event === 'js' && (
         <JSVisual presentation={stage.presentation} />
       )}
-
-      <SpeakerInfo stage={stage} show={!stage.midSlide} />
+      {stage && stage.event === 'css' && (
+        <CSSVisual presentation={stage.presentation} />
+      )}
 
       <div className={classnames('presentation')}></div>
       <div className="silhouette"></div>

@@ -1,7 +1,7 @@
+@import '../../colors.scss';
 
 svg {
 	position: relative;
-	outline: red;
 	width: 100%;
 	height: 100%;
 	z-index: 1;
@@ -50,13 +50,13 @@ path {
 .visual {
 	&.yellow {
 		path {
-			fill: var(--color-black);
+			fill: $color-black;
 		}
 		g[class^=cluster-] path.show {
 			opacity: .3;
 		}
 	}
 	&.white path{
-		fill: var(--color-red);
+		fill: $color-red;
 	}
 }
