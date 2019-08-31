@@ -19,7 +19,12 @@ html, body {
 	padding: 0;
 	font-family: 'Roboto', 'sans-serif';
 }
-
+.event-js {
+	font-family: 'Roboto', 'sans-serif';
+}
+.event-css {
+	font-family: 'Rubik', 'sans-serif';
+}
 
 .visual {
 	position: relative;
@@ -49,23 +54,7 @@ html, body {
 		background-color: $color-black;
 	}
 }
-.visual.event-css {
-	background: linear-gradient(#e6e6fa, #f0ffff);
-	position: relative;
-	mix-blend-mode: multiply;
 
-	&::after {
-		display: block;
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		background: #0c0c0c;
-		mix-blend-mode: darken;
-
-	}
-}
 
 
 .presentation {

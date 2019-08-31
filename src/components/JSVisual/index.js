@@ -45,8 +45,7 @@ const JSVisual = ({ presentation, midSlide }) => {
   }
 
   const show = async () => {
-
-    if (!clusters.current) return;
+    if (!clusters.current) return
 
     const prevCluster =
       currentCluster !== 0
@@ -55,7 +54,7 @@ const JSVisual = ({ presentation, midSlide }) => {
 
     const nextCluster = clusters.current[currentCluster]
 
-    if (!prevCluster || !nextCluster) return;
+    if (!prevCluster || !nextCluster) return
     const prevLength = prevCluster.length
     const nextLength = nextCluster.length
 
@@ -100,7 +99,7 @@ const JSVisual = ({ presentation, midSlide }) => {
         )
       })
     }
-  }, [ false ])
+  }, [false])
 
   return (
     <svg width="3280" height="1080" viewBox="0 0 3280 1080">
@@ -127,7 +126,7 @@ const JSVisual = ({ presentation, midSlide }) => {
         <path d="M1276.21,311.8v-88.94l44.47,44.47L1276.21,311.8z M1277.21,225.27v84.12l42.06-42.06L1277.21,225.27z" />
         <path d="M1276.21,311.8v88.94l-44.47-44.47L1276.21,311.8z M1275.21,398.33v-84.12l-42.06,42.06L1275.21,398.33z" />
       </g>
-{/*
+      {/*
       <g className="cluster-3">
         <path d="M118.93,212.72v-88.94l44.47,44.47L118.93,212.72z M119.93,126.19v84.12l42.06-42.06L119.93,126.19z" />
         <path d="M118.93,212.72h88.94l-44.47,44.47L118.93,212.72z M205.46,213.72h-84.12l42.06,42.06L205.46,213.72z" />

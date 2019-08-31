@@ -47,7 +47,6 @@ const IndexPage = props => {
       )}
       id="Visual"
     >
-
       <SpeakerInfo stage={stage} show={!stage.midSlide} />
 
       {stage && stage.event === 'js' && (

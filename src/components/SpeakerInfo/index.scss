@@ -3,13 +3,15 @@
 	--speaker-text-transition: 1.4s;
 }
 
+
 .speaker-info {
 	color: white;
 
+	.event-css &,
 	.white &,
 	.yellow & {
 		color: black;
-		border-left: .2rem solid #00000044;
+		border-left: .1rem solid #00000044;
 	}
 }
 
@@ -27,6 +29,10 @@
 	& .name {
 		font-weight: 700;
 		transition: font-size .4s;
+	}
+
+	.event-css & .name {
+		text-transform: uppercase;
 	}
 
 	& .topic {
@@ -60,7 +66,7 @@
 
 
 	&.show-speaker-info {
-		top: 26%;
+		top: 35%;
 	}
 }
 
