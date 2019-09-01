@@ -48,14 +48,16 @@ html, body {
 	position: absolute;
 	height: var(--screen-height);
 	width: calc(var(--screen-height) / 0.5625);
-	background: white;
+
 	top: 0;
 	right: 0;
 	opacity: 0;
+	background: url('./screen-test-pattern.png') no-repeat;
+	background-size: cover;
 }
 
 .presentation-active ~ .presentation {
-	opacity: .2;
+	opacity: 1;
 }
 
 .silhouette {
