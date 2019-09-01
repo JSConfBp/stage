@@ -37,7 +37,7 @@ const IndexPage = props => {
     }
   }, [props])
 
-  return (
+  return (<>
     <div
       className={classnames(
         'visual',
@@ -59,11 +59,11 @@ const IndexPage = props => {
         <CSSVisual presentation={stage.presentation} />
       )}
 
-
-      <div className={classnames('presentation')}></div>
-      <div className="silhouette"></div>
-      <div className="stage-bottom"></div>
     </div>
+    <div className={classnames('presentation')}></div>
+    <div className="silhouette"></div>
+    <div className="stage-bottom"></div>
+    </>
   )
 }
 

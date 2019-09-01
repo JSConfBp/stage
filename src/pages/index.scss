@@ -2,7 +2,7 @@
 
 // 3280 x 1080
 :root {
-	--screen-ratio: 0.32926829;
+	--screen-ratio: 0.33333333;
 	--color-red: $color-red;
 	--color-blue: $color-blue;
 	--color-yellow: $color-yellow;
@@ -11,6 +11,8 @@
 	--color-black: $color-black;
 
 	--color-transition: 3s;
+
+	--screen-height: calc(100vw * var(--screen-ratio));
 }
 
 html, body {
@@ -28,48 +30,31 @@ html, body {
 
 .visual {
 	position: relative;
+	z-index: 1;
 	width: 100%;
-	height: calc(100vw * var(--screen-ratio));
+	height: var(--screen-height);
 	background: hsla(115, 44%, 31%, 1);
 	transition: background-color var(--color-transition);
-}
-
-.visual {
-	&.red {
-		background-color: $color-red;
-	}
-	&.green {
-		background-color: $color-green;
-	}
-	&.blue {
-		background-color: $color-blue;
-	}
-	&.yellow {
-		background-color: $color-yellow;
-	}
-	&.white {
-		background-color: $color-white;
-	}
-	&.black {
-		background-color: $color-black;
-	}
+	overflow: hidden;
 }
 
 
+
+
+// debug, planning
 
 .presentation {
 	z-index: 10;
 	position: absolute;
-	height: calc(100vw * var(--screen-ratio));
-	width: calc(calc(100vw * var(--screen-ratio)) / 0.5625);
+	height: var(--screen-height);
+	width: calc(var(--screen-height) / 0.5625);
 	background: white;
 	top: 0;
 	right: 0;
 	opacity: 0;
-
 }
 
-.presentation-active .presentation {
+.presentation-active ~ .presentation {
 	opacity: .2;
 }
 
@@ -78,22 +63,20 @@ html, body {
 	position: absolute;
 	background: url('./silhouette.png') no-repeat;
 	background-size: contain;
-	height: 64%;
+	height: calc(.586 * var(--screen-height));
 	width: 10%;
 	left: 17vw;
-	bottom: -27%;
+	top: calc(1.266666 * var(--screen-height));
+	transform: translateY(-99%);
 	background-size: auto 108%;
     background-position: 0 36%;
 }
 
-
 .stage-bottom {
 	position: absolute;
 	z-index: 9;
-	top: 100%;
 	background: hsl(0, 0%, 22%);
-	height: 26.6666%;
-	width: 100%;
+	width: 100vw;
+	top: var(--screen-height);
+	height: calc(0.266666 * var(--screen-height));
 }
-
-// 432px

@@ -30,7 +30,7 @@ export default class HTML extends React.Component {
           {this.props.preBodyComponents}
           <div
             key={`body`}
-            style={{ height: '100%' }}
+            style={{ height: '100%', position: `relative` }}
             className={'wrapper'}
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
