@@ -41,6 +41,10 @@ g[class^=cluster-] path {
 
 g[class^=cluster-] path.show {
 	opacity: .4;
+
+	.midsession-slides-active & {
+		opacity: 1;
+	}
 }
 
 path {

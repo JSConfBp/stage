@@ -1,0 +1,72 @@
+@import '../../colors.scss';
+
+.mid-session-slides {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+
+	display: flex;
+	flex-direction: rows;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	transition: top 2s;
+
+	.midsession-slides-active & {
+		top: 0;
+	}
+
+
+	.sponsors {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+
+		display: flex;
+		flex-flow: column;
+
+		justify-content: center;
+		align-items: center;
+
+		&-top,
+		&-mid,
+		&-bottom {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-items: center;
+			width: 70%;
+		}
+
+		&-top {
+			padding-bottom: 2%;
+		}
+
+		&-mid {
+			width: 60%;
+		}
+
+		&-bottom {
+			justify-content: center;
+		}
+
+		.large {
+			width: 28%;
+			margin: 2% 1%;
+		}
+		.medium {
+			width: 19%;
+			margin: 0 2%;
+		}
+		.small {
+			width: 10%;
+			margin: 1%;
+		}
+	}
+
+}
+
