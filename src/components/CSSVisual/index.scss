@@ -63,6 +63,12 @@
 	transform: translate(49%, 0%);
 }
 
+.midsession-slides-active {
+	.wave-top {
+		transform: translate(60%, 0%) scale(.8);
+	}
+}
+
 .presentation-active {
 	.wave-top {
 		transform: translate(60%, -35%);
