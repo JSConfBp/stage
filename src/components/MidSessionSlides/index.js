@@ -1,31 +1,80 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import './index.scss'
 
 import SponsorImage from '../SponsorImage'
 
-const MidSessionSlides = ({ stage }) => (
-  <div className={classnames('mid-session-slides')}>
-    <div className="sponsors">
-      <div className="sponsors-top">
-        <SponsorImage image="mozilla" className="large" />
+const getSlides = () => Array.from(document.querySelectorAll('.slideshow'))
+
+const reset = slides => {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('show')
+
+    if (i === 0) {
+      slide.classList.add('show')
+    }
+  })
+}
+
+const next = slides => {
+  let index = slides.findIndex(elem => elem.classList.contains('show')) + 1
+
+  if (index === slides.length) {
+    index = 0
+  }
+
+  slides.forEach((slide, i) => {
+    slide.classList.remove('show')
+    if (i === index) {
+      slide.classList.add('show')
+    }
+  })
+}
+
+const MidSessionSlides = ({ stage: { midSlide } }) => {
+  const slides = useRef(getSlides())
+  const slideShowInterval = useRef(0)
+
+  useEffect(() => {
+    slides.current = getSlides()
+
+    if (midSlide) {
+      reset(slides.current)
+      slideShowInterval.current = setInterval(() => next(slides.current), 3000)
+    } else {
+      clearInterval(slideShowInterval.current)
+    }
+
+    return () => {
+      clearInterval(slideShowInterval.current)
+    }
+  }, [midSlide])
+
+  return (
+    <div className={classnames('mid-session-slides')}>
+      <div className="sponsors slideshow show">
+        <div className="sponsors-top">
+          <SponsorImage image="mozilla" className="large" />
+        </div>
+        <div className="sponsors-mid">
+          <SponsorImage image="risingstack" className="medium" />
+          <SponsorImage image="supercharge" className="medium" />
+          <SponsorImage image="bonomi" className="medium" />
+          <SponsorImage image="vacuumlabs" className="medium" />
+          <SponsorImage image="microsoft" className="medium" />
+          <SponsorImage image="mito" className="medium" />
+          <SponsorImage image="sinnerschrader" className="medium" />
+          <SponsorImage image="epam" className="medium" />
+        </div>
+        <div className="sponsors-bottom">
+          <SponsorImage image="zalando" className="small" />
+          <SponsorImage image="snyk" className="small" />
+        </div>
       </div>
-      <div className="sponsors-mid">
-        <SponsorImage image="risingstack" className="medium" />
-        <SponsorImage image="supercharge" className="medium" />
-        <SponsorImage image="bonomi" className="medium" />
-        <SponsorImage image="vacuumlabs" className="medium" />
-        <SponsorImage image="microsoft" className="medium" />
-        <SponsorImage image="mito" className="medium" />
-        <SponsorImage image="sinnerschrader" className="medium" />
-        <SponsorImage image="epam" className="medium" />
-      </div>
-      <div className="sponsors-bottom">
-        <SponsorImage image="zalando" className="small" />
-        <SponsorImage image="snyk" className="small" />
-      </div>
+      <div className="slideshow">slideshow</div>
+      <div className="logo slideshow">logo</div>
     </div>
-  </div>
-)
+  )
+}
 
 export default MidSessionSlides

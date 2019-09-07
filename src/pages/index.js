@@ -37,32 +37,32 @@ const IndexPage = props => {
     }
   }, [props])
 
-  return (<>
-    <div
-      className={classnames(
-        'visual',
-        stage.presentation && 'presentation-active',
-        stage.midSlide && 'midsession-slides-active',
-        stage.color || 'black',
-        `event-${stage.event}`
-      )}
-      id="Visual"
-    >
-      <SpeakerInfo stage={stage} show={!stage.midSlide} />
+  return (
+    <>
+      <div
+        className={classnames(
+          'visual',
+          stage.presentation && 'presentation-active',
+          stage.midSlide && 'midsession-slides-active',
+          stage.color || 'black',
+          `event-${stage.event}`
+        )}
+        id="Visual"
+      >
+        <SpeakerInfo stage={stage} show={!stage.midSlide} />
 
-      {stage && <MidSessionSlides stage={stage} />}
+        {stage && <MidSessionSlides stage={stage} />}
 
-      {stage && stage.event === 'js' && (
-        <JSVisual presentation={stage.presentation} />
-      )}
-      {stage && stage.event === 'css' && (
-        <CSSVisual presentation={stage.presentation} />
-      )}
-
-    </div>
-    <div className={classnames('presentation')}></div>
-    <div className="silhouette"></div>
-    <div className="stage-bottom"></div>
+        {stage && stage.event === 'js' && (
+          <JSVisual presentation={stage.presentation} />
+        )}
+        {stage && stage.event === 'css' && (
+          <CSSVisual presentation={stage.presentation} />
+        )}
+      </div>
+      <div className={classnames('presentation')}></div>
+      <div className="silhouette"></div>
+      <div className="stage-bottom"></div>
     </>
   )
 }
