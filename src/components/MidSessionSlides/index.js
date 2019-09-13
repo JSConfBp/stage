@@ -4,8 +4,6 @@ import './index.scss'
 
 import SponsorImage from '../SponsorImage'
 
-const getSlides = () => Array.from(document.querySelectorAll('.slideshow'))
-
 const reset = slides => {
   slides.forEach((slide, i) => {
     slide.classList.remove('show')
@@ -32,12 +30,12 @@ const next = slides => {
 }
 
 const MidSessionSlides = ({ stage: { midSlide } }) => {
-  const slides = useRef(getSlides())
+  const slides = useRef(null)
   const slideShowInterval = useRef(0)
 
-/* 
+
   useEffect(() => {
-    slides.current = getSlides()
+    slides.current = Array.from(window.document.querySelectorAll('.slideshow'))
 
     if (midSlide) {
       reset(slides.current)
@@ -51,7 +49,7 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
     }
   }, [midSlide])
 
- */  return (
+  return (
     <div className={classnames('mid-session-slides')}>
       <div className="sponsors slideshow show">
         <div className="sponsors-top">
