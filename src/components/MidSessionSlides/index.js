@@ -35,6 +35,7 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
   const slides = useRef(getSlides())
   const slideShowInterval = useRef(0)
 
+/* 
   useEffect(() => {
     slides.current = getSlides()
 
@@ -50,21 +51,24 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
     }
   }, [midSlide])
 
-  return (
+ */  return (
     <div className={classnames('mid-session-slides')}>
       <div className="sponsors slideshow show">
         <div className="sponsors-top">
           <SponsorImage image="mozilla" className="large" />
+          <SponsorImage image="vacuumlabs" className="large" />
+          <SponsorImage image="oracle" className="large" />
+          <SponsorImage image="tresorit" className="large" />
         </div>
         <div className="sponsors-mid">
           <SponsorImage image="risingstack" className="medium" />
           <SponsorImage image="supercharge" className="medium" />
           <SponsorImage image="bonomi" className="medium" />
-          <SponsorImage image="vacuumlabs" className="medium" />
           <SponsorImage image="microsoft" className="medium" />
           <SponsorImage image="mito" className="medium" />
           <SponsorImage image="sinnerschrader" className="medium" />
           <SponsorImage image="epam" className="medium" />
+          <SponsorImage image="blackrock" className="medium" />
         </div>
         <div className="sponsors-bottom">
           <SponsorImage image="zalando" className="small" />

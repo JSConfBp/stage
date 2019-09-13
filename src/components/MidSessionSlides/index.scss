@@ -43,7 +43,8 @@
 		}
 
 		&-top {
-			padding-bottom: 2%;
+			padding-bottom: 1%;
+			width: 60%;
 		}
 
 		&-mid {
@@ -55,22 +56,22 @@
 		}
 
 		.large {
-			width: 28%;
-			margin: 2% 1%;
+			width: 32%;
+			margin: 1% 1%;
 		}
 		.medium {
-			width: 19%;
+			width: 18%;
 			margin: 0 2%;
 		}
 		.small {
-			width: 10%;
+			width: 8%;
 			margin: 1%;
 		}
 	}
 
 	.slideshow {
 		opacity: 0;
-		
+
 		&.show {
 			opacity: 1;
 		}
