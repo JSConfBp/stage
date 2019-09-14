@@ -4,6 +4,8 @@ import './index.scss'
 
 import SponsorImage from '../SponsorImage'
 
+const SLIDE_INTERVAL = 3000
+
 const reset = slides => {
   slides.forEach((slide, i) => {
     slide.classList.remove('show')
@@ -33,13 +35,12 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
   const slides = useRef(null)
   const slideShowInterval = useRef(0)
 
-
   useEffect(() => {
     slides.current = Array.from(window.document.querySelectorAll('.slideshow'))
 
     if (midSlide) {
       reset(slides.current)
-      slideShowInterval.current = setInterval(() => next(slides.current), 3000)
+      slideShowInterval.current = setInterval(() => next(slides.current), SLIDE_INTERVAL)
     } else {
       clearInterval(slideShowInterval.current)
     }
@@ -58,15 +59,20 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
           <SponsorImage image="oracle" className="large" />
           <SponsorImage image="tresorit" className="large" />
         </div>
+
+      </div>
+      <div className="sponsors slideshow">
+
         <div className="sponsors-mid">
           <SponsorImage image="risingstack" className="medium" />
           <SponsorImage image="supercharge" className="medium" />
           <SponsorImage image="bonomi" className="medium" />
           <SponsorImage image="microsoft" className="medium" />
-          <SponsorImage image="mito" className="medium" />
+          <SponsorImage image="blackrock" className="medium" />
+          <SponsorImage image="instructure" className="medium" />
           <SponsorImage image="sinnerschrader" className="medium" />
           <SponsorImage image="epam" className="medium" />
-          <SponsorImage image="blackrock" className="medium" />
+          <SponsorImage image="mito" className="medium" />
         </div>
         <div className="sponsors-bottom">
           <SponsorImage image="zalando" className="small" />
