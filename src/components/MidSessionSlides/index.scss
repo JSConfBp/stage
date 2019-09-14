@@ -94,5 +94,46 @@
 		}
 	}
 
+
+
+	.logo-only & {
+		top: 0;
+	}
+
+	.logo-only & .logo {
+		opacity: 1;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 3vw;
+	}
+
+	.session-list {
+		width: 50%;
+		transform: translateX(21%);
+		display: grid;
+		font-size: 1.5vw;
+		grid-gap: 1.8vw;
+		grid-template-columns: 4vw auto;
+
+		dd {
+			line-height: 135%;
+			margin: 0;
+			font-weight: 200;
+		}
+
+		dt {
+			line-height: 135%;
+			border-left:  .1rem solid #00000077;
+			padding-left: 2vw;
+		}
+	}
+
+	.session-name {
+		display: block;
+		font-weight: 200;
+		padding-top: 1%;
+	}
 }
 

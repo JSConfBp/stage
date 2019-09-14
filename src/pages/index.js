@@ -45,12 +45,13 @@ const IndexPage = props => {
           'visual',
           stage.presentation && 'presentation-active',
           stage.midSlide && 'midsession-slides-active',
+          stage.logoOnly && 'logo-only',
           stage.color || 'black',
           `event-${stage.event.startsWith('js') ? 'js' : 'css'}`
         )}
         id="Visual"
       >
-        <SpeakerInfo stage={stage} show={!stage.midSlide} />
+        <SpeakerInfo stage={stage} show={!stage.midSlide && !stage.logoOnly} />
 
         {stage && <MidSessionSlides stage={stage} />}
 

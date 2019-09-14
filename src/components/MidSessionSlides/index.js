@@ -5,14 +5,14 @@ import './index.scss'
 import SponsorImage from '../SponsorImage'
 import SponsorSlide from '../SponsorSlide'
 
-const SLIDE_INTERVAL = 10000
+const SLIDE_INTERVAL = 2000
 
 const reset = slides => {
   slides.forEach((slide, i) => {
     slide.classList.remove('show')
 
     if (i === 0) {
-      slide.classList.add('show')
+      // slide.classList.add('show')
     }
   })
 }
@@ -32,7 +32,9 @@ const next = slides => {
   })
 }
 
-const MidSessionSlides = ({ stage: { midSlide } }) => {
+const MidSessionSlides = ({ stage }) => {
+
+  const { midSlide, coffee, lunch } = stage
   const slides = useRef(null)
   const slideShowInterval = useRef(0)
 
@@ -41,6 +43,7 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
 
     if (midSlide) {
       reset(slides.current)
+      slides.current[0].classList.add('show')
       slideShowInterval.current = setInterval(
         () => next(slides.current),
         SLIDE_INTERVAL
@@ -50,13 +53,14 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
     }
 
     return () => {
+      reset(slides.current)
       clearInterval(slideShowInterval.current)
     }
-  }, [midSlide])
+  }, [midSlide, coffee, lunch])
 
   return (
     <div className={classnames('mid-session-slides')}>
-      <div className="sponsors slideshow ">
+      <div className="sponsors slideshow">
         <div className="sponsors-top">
           <SponsorImage image="mozilla" className="large" />
           <SponsorImage image="vacuumlabs" className="large" />
@@ -64,6 +68,30 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
           <SponsorImage image="tresorit" className="large" />
         </div>
       </div>
+
+      {(coffee || lunch) && (
+        <div className="slideshow show">
+          <h1>
+            {`${coffee ? 'Coffee' : 'Lunch'} break`}
+          </h1>
+
+        <dl className="session-list">
+          {stage.upcoming.filter(session => (!!session.name)).map(session => (
+            <React.Fragment key={session.topic}>
+              <dd>{ session.start }</dd>
+              <dt>
+                {session.topic}
+                {session.name && (
+                  <span className="session-name">by {session.name}</span>
+                )}
+              </dt>
+            </React.Fragment>
+          ))}
+        </dl>
+
+         </div>
+      )}
+
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
           <SponsorImage image="risingstack" className="medium" />
@@ -84,7 +112,7 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
       <div className="slideshow">
         <SponsorSlide image="example" />
       </div>
-
+      <div className="slideshow logo">LOGO</div>
     </div>
   )
 }
