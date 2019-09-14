@@ -10,7 +10,7 @@ import MidSessionSlides from '../components/MidSessionSlides'
 import './index.scss'
 
 const emptyStage = {
-  event:'',
+  event: '',
   speaker: {
     name: '',
     topic: '',
