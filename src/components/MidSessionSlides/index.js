@@ -3,8 +3,9 @@ import classnames from 'classnames'
 import './index.scss'
 
 import SponsorImage from '../SponsorImage'
+import SponsorSlide from '../SponsorSlide'
 
-const SLIDE_INTERVAL = 3000
+const SLIDE_INTERVAL = 10000
 
 const reset = slides => {
   slides.forEach((slide, i) => {
@@ -55,7 +56,7 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
 
   return (
     <div className={classnames('mid-session-slides')}>
-      <div className="sponsors slideshow show">
+      <div className="sponsors slideshow ">
         <div className="sponsors-top">
           <SponsorImage image="mozilla" className="large" />
           <SponsorImage image="vacuumlabs" className="large" />
@@ -80,8 +81,10 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
           <SponsorImage image="snyk" className="small" />
         </div>
       </div>
-      <div className="slideshow">slideshow</div>
-      <div className="logo slideshow">logo</div>
+      <div className="slideshow">
+        <SponsorSlide image="example" />
+      </div>
+
     </div>
   )
 }
