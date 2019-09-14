@@ -40,7 +40,10 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
 
     if (midSlide) {
       reset(slides.current)
-      slideShowInterval.current = setInterval(() => next(slides.current), SLIDE_INTERVAL)
+      slideShowInterval.current = setInterval(
+        () => next(slides.current),
+        SLIDE_INTERVAL
+      )
     } else {
       clearInterval(slideShowInterval.current)
     }
@@ -59,10 +62,8 @@ const MidSessionSlides = ({ stage: { midSlide } }) => {
           <SponsorImage image="oracle" className="large" />
           <SponsorImage image="tresorit" className="large" />
         </div>
-
       </div>
       <div className="sponsors slideshow">
-
         <div className="sponsors-mid">
           <SponsorImage image="risingstack" className="medium" />
           <SponsorImage image="supercharge" className="medium" />

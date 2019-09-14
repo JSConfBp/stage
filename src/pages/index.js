@@ -10,6 +10,7 @@ import MidSessionSlides from '../components/MidSessionSlides'
 import './index.scss'
 
 const emptyStage = {
+  event:'',
   speaker: {
     name: '',
     topic: '',
@@ -45,7 +46,7 @@ const IndexPage = props => {
           stage.presentation && 'presentation-active',
           stage.midSlide && 'midsession-slides-active',
           stage.color || 'black',
-          `event-${stage.event}`
+          `event-${stage.event.startsWith('js') ? 'js' : 'css'}`
         )}
         id="Visual"
       >
@@ -53,7 +54,7 @@ const IndexPage = props => {
 
         {stage && <MidSessionSlides stage={stage} />}
 
-        {stage && stage.event === 'js' && (
+        {stage && stage.event.startsWith('js') && (
           <JSVisual presentation={stage.presentation} />
         )}
         {stage && stage.event === 'css' && (
