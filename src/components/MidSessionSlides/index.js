@@ -113,7 +113,7 @@ const MidSessionSlides = ({ stage }) => {
         <SponsorSlide image="example" />
       </div>
       <div className="slideshow logo">
-        { event === 'css' ? (<CSSLogo />) : (<JSLogo />) }
+        {event === 'css' ? <CSSLogo /> : <JSLogo />}
       </div>
     </div>
   )

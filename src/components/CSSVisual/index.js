@@ -13,7 +13,12 @@ const CSSVisual = ({ presentation, midSlide }) => {
 
   return (
     <>
-      <svg width="3280" height="1080" viewBox="0 0 3280 1080" className="css-visual">
+      <svg
+        width="3280"
+        height="1080"
+        viewBox="0 0 3280 1080"
+        className="css-visual"
+      >
         <g id="Layer_9">
           <path
             className="logo"
