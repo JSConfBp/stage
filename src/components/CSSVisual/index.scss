@@ -44,23 +44,25 @@
 	}
 }
 
-.logo {
-	fill: none;
-	stroke: $color-black;
-	stroke-width: 1%;
-}
+.css-visual {
+	.logo {
+		fill: none;
+		stroke: $color-black;
+		stroke-width: 1%;
+	}
 
-.wave-top,
-.wave-bottom {
-	transition: transform 2s;
-	fill: $color-salmon;
-}
+	.wave-top,
+	.wave-bottom {
+		transition: transform 2s;
+		fill: $color-salmon;
+	}
 
-.wave-bottom {
-	transform: translate(4%, 0%);
-}
-.wave-top {
-	transform: translate(49%, 0%);
+	.wave-bottom {
+		transform: translate(4%, 0%);
+	}
+	.wave-top {
+		transform: translate(49%, 0%);
+	}
 }
 
 .midsession-slides-active {

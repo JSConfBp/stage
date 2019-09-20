@@ -40,18 +40,16 @@ g[class^=cluster-] path {
 }
 
 g[class^=cluster-] path.show {
-	opacity: .5;
+	opacity: .7;
 
 	.midsession-slides-active & {
 		opacity: 1;
 	}
 }
 
-path {
-	fill: #fff;
-}
 
 .event-js.visual {
+
 	&.red {
 		background-color: darken($color-red, 15%);
 
@@ -78,9 +76,6 @@ path {
 	&.yellow {
 		background-color: darken($color-yellow, 10%);
 
-		path {
-			fill: $color-black;
-		}
 		g[class^=cluster-] path.show {
 			opacity: .3;
 		}
@@ -90,10 +85,6 @@ path {
 	}
 	&.white {
 		background-color: $color-white;
-
-		path{
-			fill: $color-red;
-		}
 	}
 	&.black {
 		background-color: $color-black;
@@ -111,5 +102,27 @@ path {
 		&.presentation-active {
 			background-color: darken($color-orange, 25%);
 		}
+	}
+}
+
+
+
+.event-js.visual {
+	&.white {
+		.visual-bg {
+			path {
+				fill: $color-red;
+			}
+		}
+	}
+	&.yellow {
+		.visual-bg {
+			path {
+				fill: $color-black;
+			}
+		}
+	}
+	.visual-bg path {
+		fill: #fff;
 	}
 }

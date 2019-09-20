@@ -36,49 +36,77 @@ html, body {
 	background: hsla(115, 44%, 31%, 1);
 	transition: background-color var(--color-transition);
 	overflow: hidden;
+
+	&.centered {
+		height: 100vh;
+		width: calc( 3 * 100vh);
+		margin: 0 auto;
+	}
 }
 
 
 
-
-// debug, planning
-
-.presentation {
-	z-index: 10;
+.debug {
 	position: absolute;
-	height: var(--screen-height);
-	width: calc(var(--screen-height) / 0.5625);
-
 	top: 0;
-	right: 0;
-	opacity: 0;
-	background: url('./screen-test-pattern.png') no-repeat;
-	background-size: cover;
-}
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	width: 100%;
+	height: var(--screen-height);
 
-.presentation-active ~ .presentation {
-	opacity: 1;
-}
+	.centered + & {
+		height: 100vh;
+		width: calc( 3 * 100vh);
+	}
 
-.silhouette {
-	z-index: 10;
-	position: absolute;
-	background: url('./silhouette.png') no-repeat;
-	background-size: contain;
-	height: calc(.586 * var(--screen-height));
-	width: 10%;
-	left: 17vw;
-	top: calc(1.266666 * var(--screen-height));
-	transform: translateY(-99%);
-	background-size: auto 108%;
-    background-position: 0 36%;
-}
+	.presentation {
+		z-index: 10;
+		position: absolute;
+		height: var(--screen-height);
+		width: calc(var(--screen-height) / 0.5625);
 
-.stage-bottom {
-	position: absolute;
-	z-index: 9;
-	background: hsl(0, 0%, 22%);
-	width: 100vw;
-	top: var(--screen-height);
-	height: calc(0.266666 * var(--screen-height));
+		top: 0;
+		right: 0;
+		opacity: 0;
+		background: url('./screen-test-pattern.png') no-repeat;
+		background-size: cover;
+
+		.presentation-active ~ & {
+			opacity: 1;
+		}
+
+		.centered + & {
+			height: 100vh;
+			width: calc(100vh / 0.5625);
+		}
+	}
+
+	.silhouette {
+		z-index: 10;
+		position: absolute;
+		background: url('./silhouette.png') no-repeat;
+		background-size: contain;
+		height: calc(.586 * var(--screen-height));
+		width: 10%;
+		left: 17vw;
+		top: calc(1.266666 * var(--screen-height));
+		transform: translateY(-99%);
+		background-size: auto 108%;
+		background-position: 0 36%;
+
+		.centered + & {
+			height: calc(.586 * 100vh);
+			width: 10%;
+		}
+	}
+
+	.stage-bottom {
+		position: absolute;
+		z-index: 9;
+		background: hsl(0, 0%, 22%);
+		width: 100vw;
+		top: var(--screen-height);
+		height: calc(0.266666 * var(--screen-height));
+	}
 }

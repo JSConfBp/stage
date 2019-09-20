@@ -1,0 +1,11 @@
+@import '../../colors.scss';
+
+
+.js-logo {
+
+	height: 50%;
+	transform: translateX(-3%);
+
+	fill: darken($color-red, 10%);
+
+}

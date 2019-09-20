@@ -4,8 +4,10 @@ import './index.scss'
 
 import SponsorImage from '../SponsorImage'
 import SponsorSlide from '../SponsorSlide'
+import CSSLogo from '../CSSLogo'
+import JSLogo from '../JSLogo'
 
-const SLIDE_INTERVAL = 2000
+const SLIDE_INTERVAL = 10000
 
 const reset = slides => {
   slides.forEach((slide, i) => {
@@ -33,8 +35,7 @@ const next = slides => {
 }
 
 const MidSessionSlides = ({ stage }) => {
-
-  const { midSlide, coffee, lunch } = stage
+  const { midSlide, coffee, lunch, event } = stage
   const slides = useRef(null)
   const slideShowInterval = useRef(0)
 
@@ -71,25 +72,24 @@ const MidSessionSlides = ({ stage }) => {
 
       {(coffee || lunch) && (
         <div className="slideshow show">
-          <h1>
-            {`${coffee ? 'Coffee' : 'Lunch'} break`}
-          </h1>
+          <h1>{`${coffee ? 'Coffee' : 'Lunch'} break`}</h1>
 
-        <dl className="session-list">
-          {stage.upcoming.filter(session => (!!session.name)).map(session => (
-            <React.Fragment key={session.topic}>
-              <dd>{ session.start }</dd>
-              <dt>
-                {session.topic}
-                {session.name && (
-                  <span className="session-name">by {session.name}</span>
-                )}
-              </dt>
-            </React.Fragment>
-          ))}
-        </dl>
-
-         </div>
+          <dl className="session-list">
+            {stage.upcoming
+              .filter(session => !!session.name)
+              .map(session => (
+                <React.Fragment key={session.topic}>
+                  <dd>{session.start}</dd>
+                  <dt>
+                    {session.topic}
+                    {session.name && (
+                      <span className="session-name">by {session.name}</span>
+                    )}
+                  </dt>
+                </React.Fragment>
+              ))}
+          </dl>
+        </div>
       )}
 
       <div className="sponsors slideshow">
@@ -112,7 +112,9 @@ const MidSessionSlides = ({ stage }) => {
       <div className="slideshow">
         <SponsorSlide image="example" />
       </div>
-      <div className="slideshow logo">LOGO</div>
+      <div className="slideshow logo">
+        { event === 'css' ? (<CSSLogo />) : (<JSLogo />) }
+      </div>
     </div>
   )
 }

@@ -21,9 +21,12 @@ const SOCKET_URL = 'https://stage-control.herokuapp.com/'
 
 const IndexPage = props => {
   const [stage, setStage] = useState(Object.assign({}, emptyStage))
+  const [centered, setCentered] = useState(false)
 
   useEffect(() => {
     console.log('useEffect init')
+
+    setCentered(window.location.search.includes('centered'))
 
     const socket = io(SOCKET_URL, {})
 
@@ -43,6 +46,7 @@ const IndexPage = props => {
       <div
         className={classnames(
           'visual',
+          centered && 'centered',
           stage.presentation && 'presentation-active',
           stage.midSlide && 'midsession-slides-active',
           stage.logoOnly && 'logo-only',
@@ -62,9 +66,11 @@ const IndexPage = props => {
           <CSSVisual presentation={stage.presentation} />
         )}
       </div>
-      <div className={classnames('presentation')}></div>
-      <div className="silhouette"></div>
-      <div className="stage-bottom"></div>
+      <div className="debug">
+        <div className="presentation"></div>
+        <div className="silhouette"></div>
+        <div className="stage-bottom"></div>
+      </div>
     </>
   )
 }

@@ -102,7 +102,7 @@ const JSVisual = ({ presentation, midSlide }) => {
   }, [false])
 
   return (
-    <svg width="3280" height="1080" viewBox="0 0 3280 1080">
+    <svg width="3280" height="1080" viewBox="0 0 3280 1080" className="visual-bg">
       <g className="cluster-1">
         <path d="M1240.99,617.07v88.94l-44.47-44.47L1240.99,617.07z M1239.99,703.6v-84.12l-42.06,42.06L1239.99,703.6z" />
         <path d="M1196.52,749.09v-88.94l44.47,44.47L1196.52,749.09z M1197.52,662.56v84.12l42.06-42.06L1197.52,662.56z" />
