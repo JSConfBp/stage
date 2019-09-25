@@ -22,13 +22,20 @@
 	border-left: .2rem solid #ffffff44;
 
 	& .name,
-	& .topic {
+	& .topic,
+	& .twitter {
 		display: block;
+		transition: font-size .4s;
 	}
 
 	& .name {
 		font-weight: 700;
-		transition: font-size .4s;
+		line-height: 3rem;
+		& .twitter {
+			font-weight: 300;
+	
+		}
+
 	}
 
 	.event-css & .name {
@@ -37,7 +44,7 @@
 
 	& .topic {
 		font-weight: 200;
-		transition: font-size .4s;
+
 	}
 
 	transition:
