@@ -101,6 +101,7 @@ const MidSessionSlides = ({ stage }) => {
           <SponsorImage image="blackrock" className="medium" />
           <SponsorImage image="instructure" className="medium" />
           <SponsorImage image="sinnerschrader" className="medium" />
+          <SponsorImage image="twilio" className="medium" />
           <SponsorImage image="epam" className="medium" />
           <SponsorImage image="mito" className="medium" />
         </div>
