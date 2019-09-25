@@ -71,9 +71,9 @@
 }
 
 .presentation-active .speaker-info {
-	top: 22%;
+	top: 42%;
 	left: 6%;
-	transform: scale(.66);
+	transform: translateY(-50%) scale(.66);
 	padding-left: 1rem;
 
 	& .name {
