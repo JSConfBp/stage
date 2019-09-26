@@ -64,11 +64,11 @@ const IndexPage = props => {
           <CSSVisual presentation={stage.presentation} />
         )}
       </div>
-      {/* <div className="debug">
+      <div className="debug">
         <div className="presentation"></div>
         <div className="silhouette"></div>
         <div className="stage-bottom"></div>
-      </div> */}
+      </div>
     </>
   )
 }
