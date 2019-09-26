@@ -7,8 +7,8 @@ const SpeakerInfo = ({ stage, show }) =>
     <div className={classnames('speaker-info', show && 'show-speaker-info')}>
       <span className="name">
         {stage.speaker.name}
-        <br />
-        <span className="twitter">{stage.speaker.twitter}</span>
+        {/* <br />
+        <span className="twitter">{stage.speaker.twitter}</span> */}
       </span>
 
       <span className="topic">{stage.speaker.topic}</span>
