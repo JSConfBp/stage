@@ -6,7 +6,8 @@
     "start": "npm run dev",
     "dev": "npx gatsby develop -p 8800",
     "postdev": "npm run format",
-    "build": "npx gatsby build --prefix-paths",
+    "build": "npx gatsby build",
+    "postbuild": "cp CNAME public/",
     "develop": "gatsby develop -p 8800",
     "format": "npx prettier --write \"src/**/*.js\""
   },
