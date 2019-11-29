@@ -1,12 +1,11 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://2015.jsconfbp.com/visual-2019/',
+    siteUrl: 'http://visual.jsconfbp.com',
     title: 'Visual 2019',
     description: '',
     keywords: '',
     twitter: '@jsconfbp'
   },
-  pathPrefix: `/visual-2019`,
   plugins: [
     'gatsby-plugin-sass',
     {
