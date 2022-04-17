@@ -9,7 +9,7 @@ import JSLogo from '../JSLogo'
 
 const SLIDE_INTERVAL = 10000
 
-const reset = slides => {
+const reset = (slides) => {
   slides.forEach((slide, i) => {
     slide.classList.remove('show')
 
@@ -19,8 +19,8 @@ const reset = slides => {
   })
 }
 
-const next = slides => {
-  let index = slides.findIndex(elem => elem.classList.contains('show')) + 1
+const next = (slides) => {
+  let index = slides.findIndex((elem) => elem.classList.contains('show')) + 1
 
   if (index === slides.length) {
     index = 0
@@ -63,10 +63,7 @@ const MidSessionSlides = ({ stage }) => {
     <div className={classnames('mid-session-slides')}>
       <div className="sponsors slideshow">
         <div className="sponsors-top">
-          <SponsorImage image="mozilla" className="large" />
-          <SponsorImage image="vacuumlabs" className="large" />
-          <SponsorImage image="oracle" className="large" />
-          <SponsorImage image="tresorit" className="large" />
+          <SponsorImage image="wrike-logo-black-green" className="large" />
         </div>
       </div>
 
@@ -76,8 +73,8 @@ const MidSessionSlides = ({ stage }) => {
 
           <dl className="session-list">
             {stage.upcoming
-              .filter(session => !!session.name)
-              .map(session => (
+              .filter((session) => !!session.name)
+              .map((session) => (
                 <React.Fragment key={session.topic}>
                   <dd>{session.start}</dd>
                   <dt>
@@ -94,20 +91,18 @@ const MidSessionSlides = ({ stage }) => {
 
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
-          <SponsorImage image="risingstack" className="medium" />
+          <SponsorImage
+            image="xata-black-logo-with-butterfly"
+            className="medium"
+          />
           <SponsorImage image="supercharge" className="medium" />
-          <SponsorImage image="bonomi" className="medium" />
-          <SponsorImage image="microsoft" className="medium" />
-          <SponsorImage image="blackrock" className="medium" />
-          <SponsorImage image="instructure" className="medium" />
-          <SponsorImage image="sinnerschrader" className="medium" />
-          <SponsorImage image="twilio" className="medium" />
-          <SponsorImage image="epam" className="medium" />
-          <SponsorImage image="mito" className="medium" />
+          <SponsorImage image="stately" className="medium" />
+          <SponsorImage image="exadel" className="medium" />
+          <SponsorImage image="hasura" className="medium" />
+          <SponsorImage image="supercharge" className="medium" />
         </div>
         <div className="sponsors-bottom">
-          <SponsorImage image="zalando" className="small" />
-          <SponsorImage image="snyk" className="small" />
+          <SponsorImage image="Logo-ThisDot-Labs-sm" className="small" />
         </div>
       </div>
       <div className="slideshow">

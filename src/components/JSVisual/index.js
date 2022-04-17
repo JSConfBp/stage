@@ -12,9 +12,8 @@ const JSVisual = ({ presentation, midSlide }) => {
     return Array.from(
       document.querySelectorAll('g[class^=cluster-] path')
     ).reduce((arr, triangle) => {
-      const indexMatch = triangle.parentElement.className.baseVal.match(
-        /^cluster-(\d)/
-      )
+      const indexMatch =
+        triangle.parentElement.className.baseVal.match(/^cluster-(\d)/)
 
       if (indexMatch) {
         if (!arr[indexMatch[1] - 1]) {
@@ -29,7 +28,7 @@ const JSVisual = ({ presentation, midSlide }) => {
   const showPolygon = async (polygon, timeout) => {
     if (!polygon) return Promise.resolve()
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       polygon.className.baseVal += ' show'
       setTimeout(resolve, timeout)
     })
@@ -38,7 +37,7 @@ const JSVisual = ({ presentation, midSlide }) => {
   const hidePolygon = async (polygon, timeout) => {
     if (!polygon) return Promise.resolve()
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       polygon.className.baseVal = polygon.className.baseVal.replace(/show/g, '')
       setTimeout(resolve, timeout)
     })
@@ -92,7 +91,7 @@ const JSVisual = ({ presentation, midSlide }) => {
       clusters.current = []
       currentCluster = 0
 
-      Array.from(document.querySelectorAll('path.fill')).forEach(triangle => {
+      Array.from(document.querySelectorAll('path.fill')).forEach((triangle) => {
         triangle.className.baseVal = triangle.className.baseVal.replace(
           'show',
           ''

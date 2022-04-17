@@ -19,7 +19,7 @@ const emptyStage = {
 
 const SOCKET_URL = 'https://stage-control.herokuapp.com/'
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const [stage, setStage] = useState(Object.assign({}, emptyStage))
   const [centered, setCentered] = useState(true)
 
@@ -28,7 +28,7 @@ const IndexPage = props => {
 
     const socket = io(SOCKET_URL, {})
 
-    socket.on('update', data => {
+    socket.on('update', (data) => {
       console.log('stage update', data)
       setStage(data)
     })
@@ -65,14 +65,11 @@ const IndexPage = props => {
         )}
       </div>
 
-
-      {/* <div className="debug">
+      <div className="debug">
         <div className="presentation"></div>
         <div className="silhouette"></div>
-        <div className="stage-bottom"></div>
-      </div> */}
-
-      
+        {/* <div className="stage-bottom"></div> */}
+      </div>
     </>
   )
 }

@@ -72,14 +72,13 @@
 		opacity: .7;
 	}
 
-
 	&.show-speaker-info {
 		top: 35%;
 	}
 }
 
 .presentation-active .speaker-info {
-	top: 50%;
+	top: 22%;
 	left: 6%;
 	transform: translateY(-50%) scale(.66);
 	padding-left: 1rem;
