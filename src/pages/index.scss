@@ -28,23 +28,15 @@ html, body {
 	font-family: 'Rubik', 'sans-serif';
 }
 
-.visual {
+.stage {
 	position: relative;
 	z-index: 1;
 	width: 100%;
 	height: var(--screen-height);
-	background: hsla(115, 44%, 31%, 1);
+	background-color: $color-white;
 	transition: background-color var(--color-transition);
 	overflow: hidden;
-
-	&.centered {
-		height: 100vh;
-		width: calc( 3 * 100vh);
-		
-	}
 }
-
-
 
 .debug {
 	position: absolute;
@@ -54,6 +46,7 @@ html, body {
 	z-index: 1;
 	width: 100%;
 	height: var(--screen-height);
+	overflow: hidden;
 
 	.centered + & {
 		height: 100vh;
@@ -108,5 +101,81 @@ html, body {
 		width: 100vw;
 		top: var(--screen-height);
 		height: calc(0.266666 * var(--screen-height));
+	}
+
+	.guides {
+		& > * {
+			display: block;
+			position: absolute;
+			top: 0;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+			}
+		}
+
+		.center, 
+		.golden .vertical {
+			width: 1px;
+			height: 100vh;
+		}
+
+		.center {
+			background-color: red;
+			left: 50%;
+
+			&::after {
+				height: 1px;
+				width:100vw;
+				left: 0;
+				top: 50%;
+				transform: translateX(-50%);
+				background-color: red;
+			}
+		}
+
+		.golden {
+			top: 0;
+			left: 0;
+			.horizontal, .vertical {
+				position: absolute;
+				background-color: teal;
+			}
+
+			.horizontal {
+				height: 1px;
+				width: 100vw;
+				left: 0;
+				top: calc(100vh * (1 / 1.618));
+
+				&::after {
+					content: "";
+					position: absolute;
+					height: 1px;
+					width: 100vw;
+					left: 0;
+					top: calc(-2 * (50vh - (100vh - (100vh * (1 / 1.618)))));
+					background-color: teal;
+				}
+			}
+
+			.vertical {
+				width: 1px;
+				height: 100vh;
+				top: 0;
+				left: calc(100vw * (1 / 1.618));
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 1px;
+					height: 100vh;
+					left: calc(-2 * (50vw - (100vw - (100vw * (1 / 1.618)))));
+					background-color: teal;
+				}
+			}
+		}
 	}
 }

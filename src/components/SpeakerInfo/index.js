@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import JSLogo from '../JSLogo'
 import './index.scss'
 
 const SpeakerInfo = ({ stage, show }) =>
@@ -12,6 +13,11 @@ const SpeakerInfo = ({ stage, show }) =>
       </span>
 
       <span className="topic">{stage.speaker.topic}</span>
+
+      <JSLogo 
+        className="logo"
+        variant="square"
+      />
     </div>
   )
 

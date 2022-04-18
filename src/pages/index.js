@@ -4,7 +4,6 @@ import io from 'socket.io-client'
 
 import SpeakerInfo from '../components/SpeakerInfo'
 import JSVisual from '../components/JSVisual'
-import CSSVisual from '../components/CSSVisual'
 import MidSessionSlides from '../components/MidSessionSlides'
 
 import './index.scss'
@@ -43,7 +42,7 @@ const IndexPage = (props) => {
     <>
       <div
         className={classnames(
-          'visual',
+          'stage',
           centered && 'centered',
           stage.presentation && 'presentation-active',
           stage.midSlide && 'midsession-slides-active',
@@ -58,16 +57,25 @@ const IndexPage = (props) => {
         {stage && <MidSessionSlides stage={stage} />}
 
         {stage && stage.event.startsWith('js') && (
-          <JSVisual presentation={stage.presentation} />
-        )}
-        {stage && stage.event === 'css' && (
-          <CSSVisual presentation={stage.presentation} />
+          <JSVisual
+            midSlide={stage.midSlide}
+            logoOnly={stage.logoOnly}
+            color={stage.color || 'black'}
+            presentation={stage.presentation}
+          />
         )}
       </div>
 
       <div className="debug">
         <div className="presentation"></div>
         <div className="silhouette"></div>
+        <div className="guides">
+          <div className="center"></div>
+          <div className="golden">
+            <div className="vertical"></div>
+            <div className="horizontal"></div>
+          </div>
+        </div>
         {/* <div className="stage-bottom"></div> */}
       </div>
     </>

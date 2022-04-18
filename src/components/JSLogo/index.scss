@@ -6,6 +6,12 @@
 	height: 50%;
 	transform: translateX(-3%);
 
-	fill: darken($color-red, 10%);
+	fill: darken($color-purple, 10%);
+
+	&.variant-square {
+		.outer {
+			display: none;
+		}
+	}
 
 }

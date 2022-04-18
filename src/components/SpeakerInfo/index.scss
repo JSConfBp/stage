@@ -1,8 +1,9 @@
+@import '../../colors.scss';
+
 :root {
 	--speaker-text: calc(calc(100vw * var(--screen-ratio)) / 100);
 	--speaker-text-transition: 1.4s;
 }
-
 
 .speaker-info {
 	color: white;
@@ -13,6 +14,11 @@
 		color: black;
 		border-left: .1rem solid #00000044;
 	}
+}
+
+.midsession-slides-active .speaker-info  {
+	transform: translateY(-80vh);
+	opacity: 0;
 }
 
 .speaker-info {
@@ -36,44 +42,46 @@
 			font-weight: 500;
 			font-size: .8em;
 		}
-
 	}
 
 	.event-css & .name {
 		text-transform: uppercase;
 	}
 
+	& .name {
+		color: $color-purple;
+	}
 	& .topic {
-		font-weight: 200;
-
+		font-weight: 400;
+		color: $color-orange;
 	}
 
 	transition:
 		top var(--speaker-text-transition),
 		left var(--speaker-text-transition),
 		transform  var(--speaker-text-transition),
+		opacity var(--speaker-text-transition),
 		padding-left  var(--speaker-text-transition),
 		color var(--color-transition);
 }
 
 .speaker-info {
-	top: -50%;
-	left: 34%;
-	width: 32%;
+	top: 31%;
+	left: 48%;
+	width: 26%;
 
 	& .name {
-		padding-bottom: calc( 2.5 * var(--speaker-text));
-		font-size: calc( 6 * var(--speaker-text));
+		padding-bottom: calc( 1.5 * var(--speaker-text));
+		font-size: calc( 7 * var(--speaker-text));
 	}
 
 	& .topic {
-		font-size: calc( 4.6 * var(--speaker-text));
+		font-size: calc( 4.3 * var(--speaker-text));
 		line-height: calc( 5.8 * var(--speaker-text));
-		opacity: .7;
 	}
 
 	&.show-speaker-info {
-		top: 35%;
+		top: 31%;
 	}
 }
 
@@ -91,4 +99,13 @@
 	& .topic {
 		opacity: .6;
 	}
+}
+
+
+.speaker-info .logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 120%;
+    transform: translate(-90%, -18%);
 }

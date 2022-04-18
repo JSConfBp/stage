@@ -1,7 +1,9 @@
+import classNames from 'classnames'
 import React from 'react'
+
 import './index.scss'
 
-export default () => {
+export default ({ className = '', variant = 'full' }) => {
   return (
     <svg
       version="1.1"
@@ -10,7 +12,7 @@ export default () => {
       x="0px"
       y="0px"
       viewBox="0 0 283.5 283.5"
-      className="js-logo"
+      className={classNames('js-logo', `variant-${variant}`, className)}
     >
       <g id="Yellow_square_1_">
         <path
@@ -43,100 +45,100 @@ export default () => {
         />
       </g>
       <g id="Blue_triangles_1_">
-        <g>
+        <g className="inner">
           <path d="M110.7,88.4H64.9l22.9-22.9L110.7,88.4z M67.4,87.4h41L87.8,67L67.4,87.4z" />
         </g>
-        <g>
+        <g className="inner">
           <path d="M89,153.5H43.2l22.9-22.9L89,153.5z M45.7,152.5h41L66.1,132L45.7,152.5z" />
         </g>
-        <g>
+        <g className="inner">
           <path d="M44,197.6v-45.8l22.9,22.9L44,197.6z M45,154.2v41l20.5-20.5L45,154.2z" />
         </g>
-        <g>
+        <g className="inner">
           <path d="M87.3,154.2v-45.8l22.9,22.9L87.3,154.2z M88.3,110.8v41l20.5-20.5L88.3,110.8z" />
         </g>
-        <g>
+        <g className="inner">
           <path d="M152.8,88.7l-22.9-22.9h45.8L152.8,88.7z M132.4,66.8l20.5,20.5l20.5-20.5H132.4z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M44.5,67L21.6,44.1h45.8L44.5,67z M24,45.1l20.5,20.5l20.5-20.5H24z" />
         </g>
       </g>
       <g id="Green_triangles_1_">
-        <g>
+        <g className="inner">
           <polygon points="66.2,109.6 66.2,131.3 44.5,109.6 66.2,87.9 		" />
           <path d="M66.7,132.5l-22.9-22.9l22.9-22.9V132.5z M45.2,109.6l20.5,20.5v-41L45.2,109.6z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="131.2,87.9 131.2,109.6 109.5,87.9 131.2,66.2 		" />
           <path d="M131.7,110.8l-22.9-22.9L131.7,65V110.8z M110.2,87.9l20.5,20.5v-41L110.2,87.9z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="131.1,131.3 109.5,131.3 131.1,109.6 152.8,131.3 		" />
           <path d="M154,131.8h-45.8l22.9-22.9L154,131.8z M110.7,130.8h41l-20.5-20.5L110.7,130.8z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="66.1,196.3 87.8,196.3 66.1,218 44.5,196.3 		" />
           <path d="M66.1,218.7l-22.9-22.9h45.1v0.3v0.4L66.1,218.7z M45.7,196.8l20.5,20.5l20.5-20.5H45.7z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="174.5,87.9 174.5,109.6 152.8,87.9 174.5,66.2 		" />
           <path d="M175,110.8l-22.9-22.9l22.4-22.4l0.2,0.2h0.3V110.8z M153.5,87.9l20.5,20.5v-41L153.5,87.9z" />
         </g>
-        <g>
+        <g className="outer">
           <polygon points="87.8,44.6 109.5,44.6 87.8,66.3 66.1,44.6 		" />
           <path d="M87.8,67L64.9,44.1h45.8L87.8,67z M67.4,45.1l20.5,20.5l20.5-20.5H67.4z" />
         </g>
-        <g>
+        <g className="outer">
           <polygon points="22.8,66.3 22.8,87.9 1.1,66.3 22.8,44.6 		" />
           <path d="M23.3,89.2L0.4,66.3l22.9-22.9V89.2z M1.8,66.3l20.5,20.5v-41L1.8,66.3z" />
         </g>
       </g>
       <g id="Red_triangles_1_">
-        <g>
+        <g className="inner">
           <polygon points="44.5,87.9 44.5,66.2 66.1,87.9 44.5,109.6 		" />
           <path d="M44,110.8V65l22.9,22.9L44,110.8z M45,67.5v41l20.5-20.5L45,67.5z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="109.5,109.6 87.8,109.6 109.5,87.9 131.2,109.6 		" />
           <path d="M132.4,110.1H86.6l22.9-22.9L132.4,110.1z M89.1,109.1h41l-20.5-20.5L89.1,109.1z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="87.8,131.3 87.8,153 66.1,131.3 87.8,109.6 		" />
           <path d="M88.3,154.2l-22.9-22.9l22.9-22.9V154.2z M66.9,131.3l20.5,20.5v-41L66.9,131.3z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="66.1,153 87.8,153 66.1,174.7 44.5,153 		" />
           <path d="M66.1,175.4l-22.9-22.9H89L66.1,175.4z M45.7,153.5l20.5,20.5l20.5-20.5H45.7z" />
         </g>
-        <g>
+        <g className="inner">
           <polygon points="109.5,153 109.5,174.7 87.8,153 109.5,131.3 		" />
           <path d="M110,175.9L87.1,153l22.9-22.9V175.9z M88.5,153l20.5,20.5v-41L88.5,153z" />
         </g>
-        <g>
+        <g className="outer">
           <polygon points="131.2,44.6 131.2,66.3 109.5,44.6 131.2,22.9 		" />
           <path d="M131.7,67.5l-22.9-22.9l22.9-22.9V67.5z M110.2,44.6L130.7,65v-41L110.2,44.6z" />
         </g>
-        <g>
+        <g className="outer">
           <polygon points="22.8,109.6 1.1,109.6 22.8,87.9 44.5,109.6 		" />
           <path d="M45.7,110.1H-0.1l22.9-22.9L45.7,110.1z M2.3,109.1h41L22.8,88.6L2.3,109.1z" />
         </g>
-        <g>
+        <g className="outer">
           <polygon points="22.8,22.9 44.5,22.9 22.8,44.6 1.1,22.9 		" />
           <path d="M22.8,45.3L-0.1,22.4h45.8L22.8,45.3z M2.3,23.4l20.5,20.5l20.5-20.5H2.3z" />
         </g>
       </g>
       <g id="Yellow_triangles_1_">
-        <g>
+        <g className="outer">
           <path d="M175.7,66.8h-45.8l22.9-22.9L175.7,66.8z M132.4,65.8h41l-20.5-20.5L132.4,65.8z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M110.7,45.1H64.9l22.9-22.9L110.7,45.1z M67.4,44.1h41L87.8,23.6L67.4,44.1z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M89,66.8H43.2l22.9-22.9L89,66.8z M45.7,65.8h41L66.1,45.3L45.7,65.8z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M45,154.2l-22.9-22.9L45,108.4V154.2z M23.5,131.3l20.5,20.5v-41L23.5,131.3z" />
         </g>
       </g>
@@ -162,13 +164,13 @@ export default () => {
         <g>
           <path d="M196.2,88.7l-22.9-22.9h45.8L196.2,88.7z M175.7,66.8l20.5,20.5l20.5-20.5H175.7z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M45,110.8L22.1,87.9L45,65V110.8z M23.5,87.9L44,108.4v-41L23.5,87.9z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M66.6,45.8L43.7,22.9L66.6,0V45.8z M45.2,22.9l20.5,20.5v-41L45.2,22.9z" />
         </g>
-        <g>
+        <g className="outer">
           <path d="M45,197.6l-22.9-22.9L45,151.8V197.6z M23.5,174.7L44,195.2v-41L23.5,174.7z" />
         </g>
       </g>

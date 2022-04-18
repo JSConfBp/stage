@@ -1,24 +1,133 @@
 @import '../../colors.scss';
 
-svg {
+
+.visual {
+/* 	width: 3280px;
+	height: 1080px;
+ */
 	position: relative;
-	width: 100%;
-	height: 100%;
 	z-index: 1;
+	width: 100%;
+	height: var(--screen-height);
+	background-color: $color-white;
+	transition: background-color var(--color-transition);
+	overflow: hidden;
+
+	&.centered {
+		height: 100vh;
+		width: calc( 3 * 100vh);
+	}
+
+	&.presentation-active,
+	&.midsession-slides-active,
+	&.logo-only  {
+		z-index: 1;
+	}
+
 }
 
-.cluster-1 {
-	transform: rotate(180deg) translate(-62%, -140%) scale(1.6);
+.visual {
+	&.red.presentation-active {
+		background-color: darken($color-red, 25%);
+	}
+	&.green.presentation-active {
+		background-color: change-color($color-green, $saturation: 60, $lightness: 25);
+	}
+	&.blue.presentation-active {
+		background-color: change-color($color-blue, $saturation: 70, $lightness: 30);
+	}
+	&.yellow.presentation-active {
+		background-color: darken($color-yellow, 20%);
+	}
+	&.white.presentation-active {
+		background-color: $color-white;
+	}
+	&.black {
+		background-color: $color-black;
+	}
+	&.purple.presentation-active {
+		background-color: darken($color-purple, 25%);
+	}
+	&.orange.presentation-active {
+		background-color: darken($color-orange, 25%);
+	}
 }
-.cluster-4 {
-	transform: translate(-6.8%, -24%) scale(1.5);
+
+.visual div[class^=rectangle-] {
+	transition: transform var(--speaker-text-transition);
+	position: absolute;
+	width: 100vw;
+	height: 100vw;
 }
-.cluster-2 {
-	transform: translate(45%, -8%) scale(1.4);
+
+.visual {
+	.rectangle-left {
+		bottom: 0;
+		transform-origin: bottom right;
+		background-color: $color-purple;
+	}
+	.rectangle-right {
+		top: 0;
+		transform-origin: bottom right;
+		background-color: $color-orange;
+	}
+
+	.rectangle-bottom {
+		bottom: 0;
+		transform-origin: top left;
+		background-color: $color-secondarypurple;
+	}
+
+	.rectangle-left {
+		transform: translate(-96%, 4%) rotate(13deg);
+	}
+	.rectangle-right {
+		transform: translate(80%, -60.8%) rotate(13deg);
+	}
+	.rectangle-bottom {
+		transform: translate(50%, 93%) rotate(13deg);
+	}
+
+	&.logo-only {
+		.rectangle-left {
+			transform: translate(-75%, -6%) rotate(-13deg);
+		}
+		.rectangle-right {
+			transform: translate(95%, -19%) rotate(-13deg);
+		}
+		.rectangle-bottom {
+			transform: translate(38%, 102%) rotate(0deg);
+		}
+	}
+
+	&.midsession-slides-active {
+		.rectangle-left {
+			transform: translate(-84%, -4%) rotate(-13deg);
+		}
+		.rectangle-right {
+			transform: translate(104%, -18%) rotate(-13deg);
+		}
+		.rectangle-bottom {
+			transform: translate(38%, 102%) rotate(0deg);
+		}
+	}
+
+	&.presentation-active {
+		.rectangle-left {
+			transform: translate(-100%, 4%) rotate(-26deg);
+		}
+		.rectangle-right {
+			transform: translate(110%, -18%) rotate(0deg);
+		}
+		.rectangle-bottom {
+			transform: translate(38%, 102%) rotate(0deg);
+		}
+	}
 }
-.cluster-3 {
-	transform: translate(70.3%, 72%) scale(1.5);
-}
+
+
+
+
 
 .presentation-active {
 	.cluster-2 {
@@ -29,100 +138,12 @@ svg {
 	}
 }
 
-g[class^=cluster-] {
-	transition: transform var(--speaker-text-transition);
-}
 
-g[class^=cluster-] path {
-	stroke-miterlimit: 10;
-	opacity: 0;
-	transition: opacity 6s;
-}
 
 g[class^=cluster-] path.show {
 	opacity: .7;
 
 	.midsession-slides-active & {
 		opacity: 1;
-	}
-}
-
-
-.event-js.visual {
-
-	&.red {
-		background-color: darken($color-red, 15%);
-
-		&.presentation-active {
-			background-color: darken($color-red, 25%);
-		}
-	}
-	&.green {
-		background-color: darken($color-green, 5%);
-
-		&.presentation-active {
-			background-color: change-color($color-green, $saturation: 60, $lightness: 25);
-			//background-color: darken($color-green, 15%);
-		}
-	}
-	&.blue {
-		background-color: darken($color-blue, 5%);
-
-		&.presentation-active {
-			//background-color: darken($color-blue, 15%);
-			background-color: change-color($color-blue, $saturation: 70, $lightness: 30);
-		}
-	}
-	&.yellow {
-		background-color: darken($color-yellow, 10%);
-
-		g[class^=cluster-] path.show {
-			opacity: .3;
-		}
-		&.presentation-active {
-			background-color: darken($color-yellow, 20%);
-		}
-	}
-	&.white {
-		background-color: $color-white;
-	}
-	&.black {
-		background-color: $color-black;
-	}
-	&.purple {
-		background-color: darken($color-purple, 5%);
-
-		&.presentation-active {
-			background-color: darken($color-purple, 25%);
-		}
-	}
-	&.orange {
-		background-color: darken($color-orange, 5%);
-
-		&.presentation-active {
-			background-color: darken($color-orange, 25%);
-		}
-	}
-}
-
-
-
-.event-js.visual {
-	&.white {
-		.visual-bg {
-			path {
-				fill: $color-red;
-			}
-		}
-	}
-	&.yellow {
-		.visual-bg {
-			path {
-				fill: $color-black;
-			}
-		}
-	}
-	.visual-bg path {
-		fill: #fff;
 	}
 }
