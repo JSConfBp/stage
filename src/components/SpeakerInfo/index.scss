@@ -5,18 +5,8 @@
 	--speaker-text-transition: 1.4s;
 }
 
-.speaker-info {
-	color: white;
-
-	.event-css &,
-	.white &,
-	.yellow & {
-		color: black;
-		border-left: .1rem solid #00000044;
-	}
-}
-
-.midsession-slides-active .speaker-info  {
+.midsession-slides-active .speaker-info,
+.logo-only .speaker-info  {
 	transform: translateY(-80vh);
 	opacity: 0;
 }
@@ -25,7 +15,6 @@
 	position: absolute;
 	z-index: 5;
 	padding-left: 2rem;
-	border-left: .2rem solid #ffffff44;
 
 	& .name,
 	& .topic,
@@ -47,6 +36,12 @@
 	.event-css & .name {
 		text-transform: uppercase;
 	}
+	& .name,
+	& .topic {
+		transition:
+			opacity var(--speaker-text-transition),
+			color var(--color-transition);
+	}
 
 	& .name {
 		color: $color-purple;
@@ -54,6 +49,7 @@
 	& .topic {
 		font-weight: 400;
 		color: $color-orange;
+		
 	}
 
 	transition:
@@ -93,12 +89,15 @@
 
 	& .name {
 		opacity: .8;
-
+		color:$color-white;
 	}
 
 	& .topic {
 		opacity: .6;
+		color:$color-white;
 	}
+
+	
 }
 
 

@@ -42,7 +42,7 @@
 	&.white.presentation-active {
 		background-color: $color-white;
 	}
-	&.black {
+	&.black.presentation-active  {
 		background-color: $color-black;
 	}
 	&.purple.presentation-active {
@@ -54,7 +54,9 @@
 }
 
 .visual div[class^=rectangle-] {
-	transition: transform var(--speaker-text-transition);
+	transition: 
+		transform var(--speaker-text-transition), 
+		background-color var(--color-transition);
 	position: absolute;
 	width: 100vw;
 	height: 100vw;
@@ -82,7 +84,7 @@
 		transform: translate(-96%, 4%) rotate(13deg);
 	}
 	.rectangle-right {
-		transform: translate(80%, -60.8%) rotate(13deg);
+		transform: translate(80%, -64.8%) rotate(13deg);
 	}
 	.rectangle-bottom {
 		transform: translate(50%, 93%) rotate(13deg);
@@ -120,7 +122,8 @@
 			transform: translate(110%, -18%) rotate(0deg);
 		}
 		.rectangle-bottom {
-			transform: translate(38%, 102%) rotate(0deg);
+			background-color: $color-black;
+			transform: translate(4%, 79.4%) rotate(-13deg);
 		}
 	}
 }

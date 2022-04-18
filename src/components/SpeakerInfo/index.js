@@ -14,10 +14,7 @@ const SpeakerInfo = ({ stage, show }) =>
 
       <span className="topic">{stage.speaker.topic}</span>
 
-      <JSLogo 
-        className="logo"
-        variant="square"
-      />
+      <JSLogo className="logo" variant="square" />
     </div>
   )
 

@@ -21,6 +21,7 @@ const SOCKET_URL = 'https://stage-control.herokuapp.com/'
 const IndexPage = (props) => {
   const [stage, setStage] = useState(Object.assign({}, emptyStage))
   const [centered, setCentered] = useState(true)
+  const [debug, setDebug] = useState(false)
 
   useEffect(() => {
     console.log('useEffect init')
@@ -31,6 +32,8 @@ const IndexPage = (props) => {
       console.log('stage update', data)
       setStage(data)
     })
+
+    setDebug(document.location.search.includes('debug'))
 
     return () => {
       console.log('useEffect cleanup')
@@ -66,18 +69,20 @@ const IndexPage = (props) => {
         )}
       </div>
 
-      <div className="debug">
-        <div className="presentation"></div>
-        <div className="silhouette"></div>
-        <div className="guides">
-          <div className="center"></div>
-          <div className="golden">
-            <div className="vertical"></div>
-            <div className="horizontal"></div>
+      {debug && (
+        <div className="debug">
+          <div className="presentation"></div>
+          <div className="silhouette"></div>
+          <div className="guides">
+            <div className="center"></div>
+            <div className="golden">
+              <div className="vertical"></div>
+              <div className="horizontal"></div>
+            </div>
           </div>
+          {/* <div className="stage-bottom"></div> */}
         </div>
-        {/* <div className="stage-bottom"></div> */}
-      </div>
+      )}
     </>
   )
 }
