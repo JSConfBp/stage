@@ -87,15 +87,15 @@
 	transform: translate(-23%, -50%) scale(0.66) rotate(-13deg);
 	padding-left: 2rem;
 	
-	& .name {
-		opacity: .8;
+	& .name,
+	& .topic {
+		opacity: .9;
 		color: $color-white;
 	}
 
 	& .topic {
-		opacity: .6;
-		color: $color-white;
-	}	
+		opacity: .7;
+	}
 }
 
 .speaker-info .logo-container {
@@ -126,3 +126,43 @@
 		}
 	}
 }
+
+.presentation-active {
+	&.white,
+	&.lilac {
+		.name,
+		.topic {
+			opacity: 1;
+			color: darken($color-purple, 10%);
+		}
+
+		.logo-container {
+			border-right: 2px solid darken($color-purple, 10%);
+		}
+	}
+
+	&.cyan,
+	&.macncheese,
+	&.yellow {
+		.name,
+		.topic {
+			color: $color-black;
+		}
+
+		.logo-container {
+			border-right: 2px solid $color-black;
+		}
+	}
+
+	&.skyblue {
+		.name,
+		.topic {
+			opacity: 1;
+			color: darken($color-blue, 30%);
+		}
+
+		.logo-container {
+			border-right: 2px solid darken($color-blue, 30%);
+		}
+	}
+} 

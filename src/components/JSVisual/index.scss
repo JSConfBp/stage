@@ -31,13 +31,13 @@
 		background-color: darken($color-red, 25%);
 	}
 	&.green.presentation-active {
-		background-color: change-color($color-green, $saturation: 60, $lightness: 25);
+		background-color: darken($color-green, 10%);
 	}
 	&.blue.presentation-active {
-		background-color: change-color($color-blue, $saturation: 70, $lightness: 30);
+		background-color: darken($color-blue, 10%);
 	}
 	&.yellow.presentation-active {
-		background-color: darken($color-yellow, 20%);
+		background-color: darken($color-yellow, 10%);
 	}
 	&.white.presentation-active {
 		background-color: $color-white;
@@ -46,10 +46,29 @@
 		background-color: $color-black;
 	}
 	&.purple.presentation-active {
-		background-color: darken($color-purple, 25%);
+		background-color: darken($color-purple, 15%);
 	}
 	&.orange.presentation-active {
-		background-color: darken($color-orange, 25%);
+		background-color: $color-orange;
+	}
+
+    &.skyblue.presentation-active {
+		background-color: darken($color-skyblue, 0%);
+	}
+    &.macncheese.presentation-active {
+		background-color: darken($color-macncheese, 0%);
+	}
+    &.lilac.presentation-active {
+		background-color: darken($color-lilac, 0%);
+	}
+    &.cyan.presentation-active {
+		background-color: darken($color-cyan, 0%);
+	}
+    &.jazzberry.presentation-active {
+		background-color: darken($color-jazzberry, 0%);
+	}
+    &.heatherblue.presentation-active {
+		background-color: darken($color-heatherblue, 0%);
 	}
 }
 
@@ -73,7 +92,6 @@
 		transform-origin: bottom right;
 		background-color: $color-orange;
 	}
-
 	.rectangle-bottom {
 		bottom: 0;
 		transform-origin: top left;
@@ -124,6 +142,11 @@
 		.rectangle-bottom {
 			background-color: $color-black;
 			transform: translate(4%, 79.4%) rotate(-13deg);
+		}
+	}
+	&.black.presentation-active  {
+		.rectangle-bottom {
+			border: 1px solid  lighten($color-purple, 10%);
 		}
 	}
 }
