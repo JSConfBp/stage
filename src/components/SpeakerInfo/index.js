@@ -11,10 +11,11 @@ const SpeakerInfo = ({ stage, show }) =>
         {/* <br />
         <span className="twitter">{stage.speaker.twitter}</span> */}
       </span>
-
       <span className="topic">{stage.speaker.topic}</span>
-
-      <JSLogo className="logo" variant="square" />
+      <div className="logo-container">
+        <JSLogo className="logo" variant="square" />
+      </div>
+      
     </div>
   )
 

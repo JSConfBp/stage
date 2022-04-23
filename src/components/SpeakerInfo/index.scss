@@ -51,11 +51,11 @@
 		color: $color-orange;
 		
 	}
-
+	transition-timing-function: ease-in-out;
 	transition:
 		top var(--speaker-text-transition),
 		left var(--speaker-text-transition),
-		transform  var(--speaker-text-transition),
+		transform var(--speaker-text-transition),
 		opacity var(--speaker-text-transition),
 		padding-left  var(--speaker-text-transition),
 		color var(--color-transition);
@@ -64,10 +64,10 @@
 .speaker-info {
 	top: 31%;
 	left: 48%;
-	width: 26%;
+	width: 33%;
 
 	& .name {
-		padding-bottom: calc( 1.5 * var(--speaker-text));
+		padding-bottom: calc( 3 * var(--speaker-text));
 		font-size: calc( 7 * var(--speaker-text));
 	}
 
@@ -82,29 +82,47 @@
 }
 
 .presentation-active .speaker-info {
-	top: 22%;
-	left: 6%;
-	transform: translateY(-50%) scale(.66);
-	padding-left: 1rem;
-
+	top: 19%;
+	left: 5%;
+	transform: translate(-23%, -50%) scale(0.66) rotate(-13deg);
+	padding-left: 2rem;
+	
 	& .name {
 		opacity: .8;
-		color:$color-white;
+		color: $color-white;
 	}
 
 	& .topic {
 		opacity: .6;
-		color:$color-white;
-	}
-
-	
+		color: $color-white;
+	}	
 }
 
-
-.speaker-info .logo {
+.speaker-info .logo-container {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 120%;
-    transform: translate(-90%, -18%);
+	height: 100%;
+	transform: translate(-100%, 0);
+	overflow: hidden;
+	//border-right: 2px solid $color-white;
+
+	.logo {
+		height: 128%;
+		transform: translate(7%, -22.3%);
+		transition-timing-function: ease-in-out;
+		transition:
+			transform calc(var(--speaker-text-transition) / 3);
+	}
+
+}
+.presentation-active .speaker-info {
+	
+	.logo-container {
+		border-right: 2px solid $color-white;
+
+		.logo {
+			transform: translate(85%, -22.3%);
+		}
+	}
 }
