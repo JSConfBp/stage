@@ -15,7 +15,6 @@ const SpeakerInfo = ({ stage, show }) =>
       <div className="logo-container">
         <JSLogo className="logo" variant="square" />
       </div>
-      
     </div>
   )
 
