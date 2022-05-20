@@ -7,15 +7,29 @@ import SponsorSlide from '../SponsorSlide'
 import CSSLogo from '../CSSLogo'
 import JSLogo from '../JSLogo'
 
+import Abbyy from '../../../public/sponsors/abbyy.inline.svg'
+import Auth0 from '../../../public/sponsors/auth0.inline.svg'
+import Epam from '../../../public/sponsors/epam.inline.svg'
+import Exadel from '../../../public/sponsors/exadel.inline.svg'
+import Genesys from '../../../public/sponsors/genesys.inline.svg'
+import Hasura from '../../../public/sponsors/hasura.inline.svg'
+import Hotjar from '../../../public/sponsors/hotjar.inline.svg'
+import Littledata from '../../../public/sponsors/littledata.inline.svg'
+import Newrelic from '../../../public/sponsors/newrelic.inline.svg'
+import Oracle from '../../../public/sponsors/oracle.inline.svg'
+import Stately from '../../../public/sponsors/stately.inline.svg'
+import Supercharge from '../../../public/sponsors/supercharge.inline.svg'
+import TalonOne from '../../../public/sponsors/talon-one.inline.svg'
+import ThisDot from '../../../public/sponsors/this-dot.inline.svg'
+import Twilio from '../../../public/sponsors/twilio.inline.svg'
+import Wrike from '../../../public/sponsors/wrike.inline.svg'
+import Xata from '../../../public/sponsors/xata.inline.svg'
+
 const SLIDE_INTERVAL = 10000
 
 const reset = (slides) => {
   slides.forEach((slide, i) => {
     slide.classList.remove('show')
-
-    if (i === 0) {
-      // slide.classList.add('show')
-    }
   })
 }
 
@@ -63,7 +77,9 @@ const MidSessionSlides = ({ stage }) => {
     <div className={classnames('mid-session-slides')}>
       <div className="sponsors slideshow">
         <div className="sponsors-top">
-          <SponsorImage image="wrike-logo-black-green" className="large" />
+          <Wrike className="large" />
+          <Genesys className="large" />
+          <Oracle className="large" />
         </div>
       </div>
 
@@ -91,28 +107,32 @@ const MidSessionSlides = ({ stage }) => {
 
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
-          <SponsorImage
-            image="xata-black-logo-with-butterfly"
-            className="medium"
-          />
-          <SponsorImage image="supercharge" className="medium" />
-          <SponsorImage image="stately" className="medium" />
-          <SponsorImage image="exadel" className="medium" />
-          <SponsorImage image="hasura" className="medium" />
-          <SponsorImage image="supercharge" className="medium" />
+          <Xata className="medium" />
+          <Abbyy className="medium" />
+          <Epam className="medium" />
+          <Auth0 className="medium" />
+          <Newrelic className="medium" />
+          <Stately className="medium" />
+          <Exadel className="medium" />
+          <Hasura className="medium" />
+          <Supercharge className="medium" />
+          <Littledata className="medium" />
         </div>
         <div className="sponsors-bottom">
-          <SponsorImage image="Logo-ThisDot-Labs-sm" className="small" />
+          <Hotjar className="small" />
+          <TalonOne className="small" />
+          <ThisDot className="small" />
+          <Twilio className="small" />
         </div>
       </div>
       <div className="slideshow">
         <SponsorSlide image="oracle" />
       </div>
       <div className="slideshow">
-        <SponsorSlide image="vacuumlabs" />
+        <SponsorSlide image="wrike" />
       </div>
       <div className="slideshow logo">
-        {event === 'css' ? <CSSLogo /> : <JSLogo />}
+        <JSLogo />
       </div>
     </div>
   )
