@@ -2,9 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import './index.scss'
 
-import SponsorImage from '../SponsorImage'
 import SponsorSlide from '../SponsorSlide'
-import CSSLogo from '../CSSLogo'
 import JSLogo from '../JSLogo'
 
 import Abbyy from '../../../public/sponsors/abbyy.inline.svg'

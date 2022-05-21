@@ -27,16 +27,17 @@
 		font-weight: 700;
 		line-height: 3rem;
 
-		& .twitter {
-			font-weight: 500;
-			font-size: .8em;
-		}
+	}
+	& .twitter {
+		font-weight: 700;
+		line-height: 2rem;
 	}
 
 	.event-css & .name {
 		text-transform: uppercase;
 	}
 	& .name,
+	& .twitter,
 	& .topic {
 		transition:
 			opacity var(--speaker-text-transition),
@@ -45,6 +46,9 @@
 
 	& .name {
 		color: $color-purple;
+	}
+	& .twitter {
+		color: $color-secondarypurple;
 	}
 	& .topic {
 		font-weight: 400;
@@ -67,10 +71,13 @@
 	width: 33%;
 
 	& .name {
-		padding-bottom: calc( 3 * var(--speaker-text));
+		padding-bottom: calc( 2 * var(--speaker-text));
 		font-size: calc( 7 * var(--speaker-text));
 	}
-
+	& .twitter {
+		padding-bottom: calc( 2.5 * var(--speaker-text));
+		font-size: calc( 4.2 * var(--speaker-text));
+	}
 	& .topic {
 		font-size: calc( 4.3 * var(--speaker-text));
 		line-height: calc( 5.8 * var(--speaker-text));
@@ -88,9 +95,14 @@
 	padding-left: 2rem;
 	
 	& .name,
+	& .twitter,
 	& .topic {
 		opacity: .9;
 		color: $color-white;
+	}
+
+	& .twitter {
+		opacity: .5;
 	}
 
 	& .topic {
@@ -136,6 +148,10 @@
 			color: darken($color-purple, 10%);
 		}
 
+		.twitter {
+			color: darken($color-purple, 10%);
+		}
+
 		.logo-container {
 			border-right: 2px solid darken($color-purple, 10%);
 		}
@@ -148,7 +164,9 @@
 		.topic {
 			color: $color-black;
 		}
-
+		.twitter {
+			color: $color-black;
+		}
 		.logo-container {
 			border-right: 2px solid $color-black;
 		}
@@ -160,7 +178,9 @@
 			opacity: 1;
 			color: darken($color-blue, 30%);
 		}
-
+		.twitter {
+			color: darken($color-blue, 30%);
+		}
 		.logo-container {
 			border-right: 2px solid darken($color-blue, 30%);
 		}
