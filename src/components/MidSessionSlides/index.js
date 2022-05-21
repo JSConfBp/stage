@@ -118,6 +118,8 @@ const MidSessionSlides = ({ stage }) => {
           <Supercharge className="medium" />
           <Littledata className="medium" />
         </div>
+      </div>
+      <div className="sponsors slideshow">
         <div className="sponsors-bottom">
           <Hotjar className="small" />
           <TalonOne className="small" />
