@@ -1,4 +1,5 @@
 @import '../../colors.scss';
+@import '../../fonts.scss';
 
 .mid-session-slides {
 	position: absolute;
@@ -49,10 +50,27 @@
 			width: 70%;
 			padding-bottom: 3%;
 			padding-top: 1%;
+
+			.sponsor-container {
+				width: 12vw;
+			}
 		}
 
 		&-bottom {
 			justify-content: center;
+		}
+
+		.sponsor-container {
+			text-align: center;
+			display: flex;
+			flex-flow: column wrap;
+			align-self: flex-end;
+			
+			h4 {
+				font-size: 1.3rem;
+				color: $color-purple;
+				font-family: $heading-font;
+			}
 		}
 
 		.large {
@@ -111,6 +129,7 @@
 	h1 {
 		margin: 0;
 		font-size: 3vw;
+		font-family: $heading-font;
 	}
 
 	.session-list {

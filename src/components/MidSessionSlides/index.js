@@ -56,7 +56,7 @@ const MidSessionSlides = ({ stage }) => {
 
     if (midSlide) {
       reset(slides.current)
-      slides.current[0].classList.add('show')
+      slides.current[1].classList.add('show')
       slideShowInterval.current = setInterval(
         () => next(slides.current),
         SLIDE_INTERVAL
@@ -102,17 +102,31 @@ const MidSessionSlides = ({ stage }) => {
           </dl>
         </div>
       )}
+      <div className="sponsors slideshow">
+        <div className="sponsors-mid">
+          <div className="sponsor-container">
+            <h4>Day One Afterparty by</h4>
+            <Auth0 className="medium" />
+          </div>
 
+          <div className="sponsor-container">
+            <h4>Scholarship Support & Closed Captions by</h4>
+            <Abbyy className="medium" />
+          </div>
+
+          <div className="sponsor-container">
+            <h4>Sketchnotes by</h4>
+            <Hasura className="medium" />
+          </div>
+        </div>
+      </div>
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
           <Xata className="medium" />
-          <Abbyy className="medium" />
           <Epam className="medium" />
-          <Auth0 className="medium" />
           <Newrelic className="medium" />
           <Stately className="medium" />
           <Exadel className="medium" />
-          <Hasura className="medium" />
           <Supercharge className="medium" />
           <Littledata className="medium" />
         </div>
