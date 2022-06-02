@@ -57,10 +57,10 @@ const MidSessionSlides = ({ stage }) => {
     if (midSlide) {
       reset(slides.current)
       slides.current[0].classList.add('show')
-      //slideShowInterval.current = setInterval(
-      //  () => next(slides.current),
-      //  SLIDE_INTERVAL
-      //)
+      slideShowInterval.current = setInterval(
+        () => next(slides.current),
+        SLIDE_INTERVAL
+      )
     } else {
       clearInterval(slideShowInterval.current)
     }
