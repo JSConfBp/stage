@@ -16,24 +16,34 @@ const emptyStage = {
   },
 }
 
-const SOCKET_URL = 'https://stage-control.herokuapp.com/'
+const SOCKET_URL = 'https://stage-control.herokuapp.com'
+//const SOCKET_URL = 'http://localhost:3000'
 
 const IndexPage = (props) => {
   const [stage, setStage] = useState(Object.assign({}, emptyStage))
   const [centered, setCentered] = useState(true)
   const [debug, setDebug] = useState(false)
 
-  useEffect(() => {
-    console.log('useEffect init')
-
-    const socket = io(SOCKET_URL, {})
+  let socket
+  const init = async () => {
+    const datareq = await fetch(`${SOCKET_URL}/api/stage`)
+    const data = await datareq.json()
+    setStage(data)
+    socket = io(SOCKET_URL, {
+      path: '/api/socket/',
+    })
 
     socket.on('update', (data) => {
       console.log('stage update', data)
       setStage(data)
     })
+  }
 
+  useEffect(() => {
+    console.log('useEffect init')
+    
     setDebug(document.location.search.includes('debug'))
+    init()
 
     return () => {
       console.log('useEffect cleanup')
